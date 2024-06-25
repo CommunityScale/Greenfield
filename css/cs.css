@@ -87,6 +87,11 @@ Table of contents
   white-space: nowrap; /* Prevent line breaks */
 }
 
+.small-text {
+  font-size: 1.2rem; /* Smaller than the body font size of 1.5em */
+  line-height: 1.2;
+}
+
 .unresponsive {
   display: flex;
   flex-wrap: nowrap;
@@ -107,7 +112,7 @@ Table of contents
 }
 
 .content-size {
-  padding-top: 8px; /* Adds 20px padding to the top */
+  padding-top: 0px; /* Adds 20px padding to the top */
   padding-right: 0;
   padding-bottom: 0;
   padding-left: 0;
