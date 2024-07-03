@@ -126,6 +126,17 @@ Table of contents
   flex: 1 1 auto; /* Fills the remaining space */
 }
 
+.scroll-container {
+  width: 100%; /* Adjust width as needed */
+  overflow-x: auto; /* Enables horizontal scrolling */
+  white-space: nowrap; /* Prevents content from wrapping to a new line */
+  }
+
+.scroll-content {
+  display: inline-block; /* Keeps content in a single line */
+  width: auto; /* Example width to show scrolling, adjust as needed */
+}
+
 /* For devices larger than 400px */
 @media (min-width: 400px) {
   .container {
