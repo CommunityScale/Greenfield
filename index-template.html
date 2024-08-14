@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<!-- Metadata 2024 -->
+	<meta charset="utf-8">
+	<title>Greenfield Housing Study Dashboard</title>
+	<meta name="description" content="Explore our interactive dashboard to understand housing needs in Greenfield. This tool provides insights into housing availability, affordability, and trends.">
+	<meta name="keywords" content="Greenfield, Housing, Urban Planning, CommunityScale, Assessment, Dashboard">
+	<meta name="author" content="CommunityScale">
+	<link rel="canonical" href="https://communityscale.github.io/Greenfield/">
+	<meta property="og:title" content="Greenfield Housing Study Dashboard">
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="https://communityscale.github.io/Greenfield/">
+	<meta property="og:image" content="https://raw.githubusercontent.com/CommunityScale/Greenfield/main/images/socialcard.jpg">
+	<meta property="og:description" content="Housing Study educational dashboard for Greenfield. Provides detailed analysis and insights on housing trends, affordability, and needs.">
+	<meta property="og:site_name" content="CommunityScale">
+	<meta property="og:locale" content="en_US">
+	<meta property="article:author" content="CommunityScale">
+	<meta property="article:tag" content="Urban Planning">
+	<meta property="article:tag" content="Housing">
+	<meta property="article:tag" content="Greenfield">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Greenfield Housing Study Dashboard">
+	<meta name="twitter:description" content="Interactive dashboard providing insights into Greenfield's housing needs. Explore data on affordability, availability, and trends.">
+	<meta name="twitter:image" content="https://raw.githubusercontent.com/CommunityScale/Greenfield/main/images/socialcard.jpg">
+	<meta name="twitter:creator" content="@CommunityScale">
+	<meta http-equiv="content-language" content="en">
+
+	<!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/cs-template.css">
+
+	<!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+
+<body>
+
+	<!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+	<!-- Sticky header -->
+	<div class="sticky">
+		<div class="container" >
+			<p class="inline-text">
+					<a href="https://greenfield-ma.gov/" target="_blank"><img src="images/community.png" alt="Greenfield" class="inline-image"></a>
+					<span class="title"><b> Housing Study |</span></b><a href="#Overview">Overview</a> | <a href="#People">People</a> | <a href="#Place"> Place </a>| <a href="#Demand">Demand</a>
+				</p>
+		</div>
+	</div>
+
+	<!-- Cover banner -->
+
+	<div class="cover">
+		<div class="container" style="margin-top: 0">
+			<h1>City of Greenfield
+				<br>Housing Plan Dashboard
+			</h1>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="nine columns" style="margin-top: 20px">
+				<p>This dashboard was created by <a href="http://communityscale.io">CommunityScale</a> for the <a href="https://greenfield-ma.gov/">City of Greenfield</a>. The objective of this dashboard is to outline the plan's objectives and priorities, share key observations and findings about the local housing landscape, and highlight recommended strategies to increase housing production and address affordability challenges.</p>
+			</div>
+			<div class="one-half column" style="margin-top: 20px">
+			</div>
+		</div>
+		<!-- Hide the TOC
+		<div class="row">
+			<div class="one-fifth column"><a href="#Overview"><img src="images/Overview.png" class="icon" title="Overview"><br><b>Overview</b></a>, introducing the purpose of this dashboard.</div>
+			<div class="one-fifth column"><a href="#People"><img src="images/People.png" class="icon" title="People"><br><b>Indicators</b></a>, profiling characteristics such as income, employment, household structure, and cost burden.</div>
+			<div class="one-fifth column"><a href="#Place"><img src="images/Place.png" class="icon" title="Place"><br><b>Solutions</b></a>, to generate new construction that fits with the community's needs.</div>
+			<div class="one-fifth column"><a href="#Demand"><img src="images/Demand.png" class="icon" title="Demand"><br><b>Next steps</b></a>, and how you can get involved.</div>
+		</div>
+		 -->
+	</div>
+
+	<!-- Divider row -->
+	<div class="divider">
+		<div class="container">
+			<div class="Twelve columns">
+				<h2 id="Overview" class="inline-text"><img src="images/Overview.png" class="inline-image" title="Overview">Overview</h2>
+			</div>
+		</div>
+	</div>
+
+	<!-- Header row -->
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns" style="margin-top: 2%">
+				<h3>Greenfield is developing a city-wide housing plan.</h3>				
+			</div>
+		</div>
+
+		<!-- Row with image and text -->
+		<div class="row">
+			<div class="eight columns" style="margin-top: 2%">
+				<p><img src="./images/Greenfield aerial photo.jpg" height=auto width=100% title="CommunityScale" alt="CommunityScale"></a></p>
+			</div>
+			<div class="four columns" style="margin-top: 2%">
+				<p>This housing needs assessment combines extensive quantitative data analysis with consideration of the community’s goals for its future to produce a 10-year housing production target.</p>
+				<p>This website version of the study highlights key observations and findings. The Housing Needs Assessment document is also availble in a much more detailed, downloadable pdf format:</p>
+				<p><a href="https://docs.google.com/presentation/d/1RgziR0sq0CrdSUhm9lWpNB4xV_gJkDU1canw5z0JRwE/edit?usp=sharing" target="blank"><button>Housing Needs Assessment Report</button></a></p>
+				<p>The People and Place sections of this report were presented at a public meeting on May 22, 2024. A video of this presentation is available <a href="https://www.youtube.com/watch?v=LUDM-pgbCJo" target="blank">here</a>.
+			</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Header row -->
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns" style="margin-top: 2%">
+				<h3>Top 3 housing goals for Greenfield</h3>
+				<h5>Greenfield has set three guiding housing goals for Greenfield which encompass the range of actions and strategies needed to address today’s and tomorrow’s key housing challenges. </h5>
+			</div>
+		</div>
+
+		<!-- Row three call outs -->
+		<div class="cover">
+			<div class="unresponsive">
+				<div class="side-by-side" style="margin-top: 0%">
+					<p><img src="images/new.png" style="width:50%; max-width: 80px; min-width: 50px;"></p>
+					<p><b>Build new housing for all income levels.</b></p>
+				</div>
+				<div class="side-by-side" style="margin-top: 0%">
+					<p><img src="images/affordable.png" style="width:50%; max-width: 80px; min-width: 50px;"></p>
+					<p><b>Provide affordable options for seniors.</b></p>
+				</div>
+				<div class="side-by-side" style="margin-top: 0%">
+					<p><img src="images/preserve.png" style="width:50%; max-width: 80px; min-width: 50px;"></p>
+					<p><b>Fill affordable housing gaps, especially "missing middle".</b></p>
+				</div>								
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="nine columns" style="margin-top: 2%">
+				<p>The Housing Plan builds on progress made over the past several years, including through the following community planning efforts:</p>
+				<ul>
+					<li>Greenfield Housing Study (2014)</li>
+					<li>Sustainable Master Plan Housing Element (2014)</li>
+					<li>Downtown Revitalization Plan (2023)</li>
+					<li>Community Preservation Plan (2023)</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns" style="margin-top: 2%">
+				<h3>Summary of findings</h3>
+				<h5>(To be completed later in the analysis...)</h5>
+			</div>
+		</div>
+	</div>	
+
+	<!-- People Divider row -->
+	<div class="divider">
+		<div class="container">
+			<div class="Twelve columns">
+				<h2 id="People" class="inline-text"><img src="images/Place.png" class="inline-image" title="People">People</h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns" style="margin-top: 2%">
+				<p>The following section profiles the people of Greenfield, detailing characteristics such as income, household structure, and cost burden. These indicators combine to describe the local population's housing needs and preferences which inform this report's recommended strategies for new housing production to meet demand and fill gaps in affordability and attainability.</p>
+				<h3>Greenfield's population is growing older.</h3>
+				<p>Greenfield’s population has been rapidly aging over the past decade, with the 65+ age group growing while other age groups shrink. If these trends continue through the next decade, about a third of the population will be over 65+ with fewer adults at ages associated with starting and raising families. In general, younger households are more likely to prefer family-oriented housing and neighborhoods where as older households may have a broader range of preferences and priorities, including senior options.</p>
+				<h5>The 65+ population is projected to increase by 30% over the next decade.</h5>
+			</div>
+		</div>
+
+		<!-- Row with image and text -->
+		<div class="row">
+			<div class="eight columns" style="margin-top: 2%">
+				<iframe title="" aria-label="Interactive area chart" id="datawrapper-chart-skZAr" src="https://datawrapper.dwcdn.net/skZAr/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="388" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+				</script>
+			</div>
+			<div class="four columns" style="margin-top: 2%">
+				<p>This chart illustrates trends in population by age cohort, both historic and projected. The projection is based on recent trends extended. Depending on economic, policy, and other conditions, the actual future age distribution may vary over time.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns" style="margin-top: 2%">
+				<h5>Greenfield’s seniors need smaller, accessible housing options.</h5>
+			</div>
+		</div>
+
+		<!-- Row with image and text -->
+		<div class="row">
+			<div class="eight columns" style="margin-top: 2%">
+				<table>
+					<tr>
+						<th>Households group</th>
+						<th>Share of total Greenfield households</th>
+						<th>Share of total Massachusetts households</th>
+					</tr>
+					<tr>
+						<td>Age 65+</td>
+						<td>36.0%</td>
+						<td>25.0%</td>
+					</tr>
+					<tr>
+						<td>65+ 1-person</td>
+						<td>20.5%</td>
+						<td>9.8%</td>
+					</tr>
+					<tr>
+						<td>65+ 1-2 person in 3+ bedroom units</td>
+						<td>26.0%</td>
+						<td>18.6%</td>
+					</tr>
+				</table>
+			</div>
+			<div class="four columns" style="margin-top: 2%">
+				<p>Greenfield’s population includes a much higher proportion of seniors than the state overall. More specifically, Greenfield has much higher rates of 1-person senior households, including nearly 4 times the rate of renters. Many households in this group might be interested in alternative housing options more tailored to a single seniors’ needs, incomes, and lifestyle preferences.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="twelve columns" style="margin-top: 2%">
+				<p>The broader Greenfield region has substantially more small senior households living in larger units than the state average. Many households in this group might be interested in downsizing to smaller units in more walkable locations near amenities, services, and transit.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns" style="margin-top: 2%">
+				<h3>Middle-income households have limited housing options in Greenfield.</h3>
+				<p>The following analysis examines household characteristics and housing need in terms of household incomes relative to the local Area Median Income (AMI). For example, households within the "60-80%" group earn between 60% and 80% of the HUD-established AMI for the metro area. Each household AMI group has a different need for monthly housing costs.</p>
+				<h5>Greenfield has a conspicuously low "missing middle" population (80-120% AMI).</h5>
+			</div>
+		</div>
+
+		<!-- Row with image and text -->
+		<div class="row">
+			<div class="eight columns" style="margin-top: 2%">
+				<table>
+					<tr>
+						<th>AMI level</th>
+						<th>Total households</th>
+						<th>Household income range</th>
+						<th>Monthly affordable housing costs</th>
+					</tr>
+					<tr>
+						<td>Below 30%</td>
+						<td>2,025</td>
+						<td>Below $27,930</td>
+						<td>Below $700</td>
+					</tr>
+					<tr>
+						<td>30-60%</td>
+						<td>1,921</td>
+						<td>$27,930-55,860</td>
+						<td>$700-1,400</td>
+					</tr>
+					<tr>
+						<td>60-80%</td>
+						<td>1,139</td>
+						<td>$55,860-74,480</td>
+						<td>$1,400-1,850</td>
+					</tr>
+					<tr>
+						<td>80-100%</td>
+						<td>689</td>
+						<td>$74,480-93,100</td>
+						<td>$1,850-2,350</td>
+					</tr>
+					<tr>
+						<td>100-120%</td>
+						<td>56</td>
+						<td>$93,100-111,720</td>
+						<td>$2,350-2,800</td>
+					</tr>
+					<tr>
+						<td>Above 120%</td>
+						<td>1,849</td>
+						<td>Above $111,720</td>
+						<td>Above $2,800</td>
+					</tr>
+				</table>
+			</div>
+			<div class="four columns" style="margin-top: 2%">
+				<p>These households typically represent a community’s “middle class” workforce, including public safety officers, skilled nurses, educators, and municipal employees. Greenfield’s low proportion of 80-120% AMI households is likely a result of limited available housing options at price points this group can afford, requiring they live elsewhere.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns" style="margin-top: 2%">
+				<h3>Projected growth is mostly lower-income</h3>
+				<p>Greenfield’s household population has grown slowly since 2010. In terms of relative income levels, most of the growth has been concentrated among lower-income households. The >120% AMI group has also grown while middle-income groups have shrunk. The table below estimates how much these groups will change by 2034 if these trends continue.</p>
+				<h5>Most of Greenfield’s projected growth is among low-income households (based on recent trends extended)</h5>
+			</div>
+		</div>
+
+		<!-- Row with image and text -->
+		<div class="row">
+			<div class="six columns" style="margin-top: 2%">
+				<iframe title="" aria-label="Interactive area chart" id="datawrapper-chart-1OBVO" src="https://datawrapper.dwcdn.net/1OBVO/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="381" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+				</script>
+			</div>
+			<div class="six columns" style="margin-top: 2%">
+				<table>
+					<tr>
+						<th>AMI Group</th>
+						<th>2022</th>
+						<th>2034</th>
+						<th>Change</th>
+					</tr>
+					<tr>
+						<td>Below 30%</td>
+						<td>2,063</td>
+						<td>2,444</td>
+						<td>+23.0%</td>
+					</tr>
+					<tr>
+						<td>30-60%</td>
+						<td>1,948</td>
+						<td>2,210</td>
+						<td>+16.6%</td>
+					</tr>
+					<tr>
+						<td>60-80%</td>
+						<td>1,135</td>
+						<td>1,099</td>
+						<td>-3.9%</td>
+					</tr>
+					<tr>
+						<td>80-100%</td>
+						<td>678</td>
+						<td>569</td>
+						<td>-18.7%</td>
+					</tr>
+					<tr>
+						<td>100-120%</td>
+						<td>550</td>
+						<td>403</td>
+						<td>-30.4%</td>
+					</tr>
+					<tr>
+						<td>Above 120%</td>
+						<td>1,856</td>
+						<td>1,922</td>
+						<td>+4.3%</td>
+					</tr>
+				</table>			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns" style="margin-top: 2%">
+				<h3>Demographics by income level</h3>
+				<p>These charts break down socioeconomic and demographic indicators by income in terms of AMI level.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="six columns" style="margin-top: 2%">
+				<h5>Non-white households are more likely to be low-income in Greenfield</h5>
+				<p>Greenfield’s lowest income groups are its most racially diverse, especially the <30% AMI group. Other income levels are relatively consistent in their ratios of white and non-white households.</p>
+				<iframe title="" aria-label="Stacked Bars" id="datawrapper-chart-72yWJ" src="https://datawrapper.dwcdn.net/72yWJ/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="203" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+				</script>
+			</div>
+			<div class="six columns" style="margin-top: 2%">
+				<h5>Family households tend to be higher income than non-family households</h5>
+				<p>Families with children are concentrated in the >120% and <80% AMI groups. Nonfamily households are predominantly low-income (this group includes one-person households). Families without children (such as couples) are most common at the >120% AMI level.</p>
+				<iframe title="" aria-label="Stacked Bars" id="datawrapper-chart-TCxBX" src="https://datawrapper.dwcdn.net/TCxBX/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="263" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+				</script>
+			</div>
+		</div>
+		<div class="row">
+			<div class="six columns" style="margin-top: 2%">
+				<h5>Most households aged 65+ are lower income. Other age groups are more evenly distributed across incomes.</h5>
+				<p>Most households in the >65 age group have incomes below 60% AMI. Households between 25-64 are most prevalent in the >120% AMI but also particularly numerous in the 30-60% and <30% AMI groups. The small group of youngest households (<25 years) are relatively evenly distributed across all AMI levels.</p>
+					<iframe title="" aria-label="Stacked Bars" id="datawrapper-chart-TcxMr" src="https://datawrapper.dwcdn.net/TcxMr/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="263" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+					</script>
+			</div>
+			<div class="six columns" style="margin-top: 2%">
+				<h5>People with disabilities are much more likely to be lower-income.</h5>
+				<p>Greenfield’s resident population includes many people with disabilities that may restrict their housing choices. Lower-income households are more likely to include people with one or more of these disabilities but there are significant numbers across the income spectrum. This chart summarizes people with disabilities by income level. People with multiple disabilities are counted multiple times in this dataset.
+					<iframe title="" aria-label="Stacked Bars" id="datawrapper-chart-tPgu8" src="https://datawrapper.dwcdn.net/tPgu8/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="183" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+					</script>	
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns" style="margin-top: 2%">
+				<h3>Cost burden in Greenfield</h3>
+				<p>Households are cost burdened when paying more than 30% of their income on housing costs. They are considered severely cost burdened when these costs exceed 50% of their income. For renters, this includes lease rent and utilities. For homeowners, this includes mortgage costs, property taxes, insurance, utilities, and any condo fees.</p>
+				<h5>Lower-income households are much more likely cost-burdened (homeowners and renters alike)</h5>
+			</div>
+		</div>
+		<div class="row">
+			<div class="eight columns" style="margin-top: 2%">
+				<iframe title="" aria-label="Stacked Bars" id="datawrapper-chart-T724X" src="https://datawrapper.dwcdn.net/T724X/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="263" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+				</script>
+			</div>
+			<div class="four columns" style="margin-top: 2%">
+				<p>In Greenfield, most low-income households are cost burdened. Most households earning >80% AMI are not cost burdened.</p>
+			</div>			
+		</div>
+	</div>
+
+	<div class="divider">
+		<div class="container">
+			<div class="Twelve columns">
+				<h2 id="Place" class="inline-text"><img src="images/Place.png" class="inline-image" title="People">Place</h2>
+			</div>
+		</div>
+	</div>	
+
+	<div class="container">
+		<div class="Twelve columns">
+			<p>	The following section profiles the community spatially and assesses Greenfield’s housing stock and affordability, detailing characteristics such as structure type, bedroom count, and development timeframe as well as household costs and market pricing for local rental and ownership units.</p>
+		</div>
+	</div>		
+	
+	<div class="container">
+		<div class="row">
+			<div class="Twelve columns">
+				<h3>Incomes and affordability are unevenly distributed across the city.</h3>
+				<h5>Explore this interactive map to compare neighborhoods in terms of income and other indicators.</h5>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="twelve columns">
+				<style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style>
+				<div class="embed-container">
+					<small><a href="//communityscale.maps.arcgis.com/apps/Embed/index.html?webmap=4fb53c6245b44580a6150c7c9c83282e&extent=-72.8387,42.4886,-72.369,42.7226&zoom=true&scale=true&legendlayers=true&disable_scroll=true&theme=light" style="color:#0000FF;text-align:left" target="_blank">View larger map</a></small>
+					<br><iframe width="500" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Greenfield HNA" src="//communityscale.maps.arcgis.com/apps/Embed/index.html?webmap=4fb53c6245b44580a6150c7c9c83282e&extent=-72.6725,42.5523,-72.5223,42.666&zoom=true&previewImage=false&scale=true&legendlayers=true&show_panel=true&disable_scroll=true&theme=light"></iframe>
+				</div>				
+			</div>
+		</div>
+	</div>
+<br>
+	<div class="container">
+		<div class="row">
+			<div class="Twelve columns">
+				<h3>Greenfield has a significant affordable housing supply.</h3>
+				<h5>15% of Greenfield’s housing units are committed affordable.</h5>
+			</div>
+		</div>
+		<div class="row">
+			<div class="eight columns">
+				<iframe title="" aria-label="Stacked Bars" id="datawrapper-chart-hfOOz" src="https://datawrapper.dwcdn.net/hfOOz/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="201" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+				</script>
+			</div>
+			<div class="four columns">
+				<p>The local housing stock includes a mix of committed affordable housing supported by federal programs such as Low Income Housing Tax Credits (LIHTC) and Housing Choice Vouchers. For households with particularly low incomes, these units can represent one of the only housing options available to them.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="Twelve columns">
+				<h3>Uneven mix of housing options</h3>
+				<h5>Most single-family homes are ownership and most multi-family are rental.</h5>
+			</div>
+		</div>
+		<div class="row">
+			<div class="eight columns">
+				<iframe title="" aria-label="Stacked Bars" id="datawrapper-chart-Abb6A" src="https://datawrapper.dwcdn.net/Abb6A/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="213" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+				</script>
+			</div>
+			<div class="four columns">
+				<p>This graph inventories the local housing stock in terms of each unit's structure type, a characteristic defined as the number of units in the building that contains a given unit.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="Twelve columns">
+				<h5>Most ownership units are larger and most rentals are smaller</h5>
+			</div>
+		</div>
+		<div class="row">
+			<div class="eight columns">
+				<iframe title="" aria-label="Stacked Bars" id="datawrapper-chart-medVs" src="https://datawrapper.dwcdn.net/medVs/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="196" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+				</script>
+			</div>
+			<div class="four columns">
+				<p>This graph inventories the local housing stock in terms of bedroom count by unit by tenure. The majority of Greenfield’s housing units are two bedroom or larger, especially among ownership units.</p>
+			</div>
+		</div>
+	</div>	
+
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns">
+				<h3>The affordability gap is widening.</h3>
+				<h5>Homeownership is increasingly out of reach.</h5>
+			</div>
+		</div>
+		<div class="row">
+			<div class="eight columns">
+				<iframe title="" aria-label="Interactive line chart" id="datawrapper-chart-nex3B" src="https://datawrapper.dwcdn.net/nex3B/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="360" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+				</script>
+			</div>
+			<div class="four columns">
+				<p>This chart compares the median listing price in Greenfield with the home value affordable to a household earning the median household income. A wider gap means higher barrier to entry for first-time homebuyers and increased risk that an existing resident might be priced out of the community if they choose or need to move to a different house.</p>
+				<p>"Affordable" is defined as monthly housing costs that do not exceed 30% of a household's income (i.e. that do not trigger cost burden). Housing costs involve more than just the monthly mortgage payment. Other costs that factor into this affordability calculus include property tax, private mortgage insurance (PMI), insurance, utilities, and condo fees.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="six columns">
+				<h5>Most current homeowners may not be able to afford current prices.</h5>
+				<p>This chart tracks the typical market value for single family homes and condos over the past several years. The adjacent table translates these values into monthly costs (mortgage + tax and other costs).</p>
+				<iframe title="" aria-label="Interactive line chart" id="datawrapper-chart-Kt9cq" src="https://datawrapper.dwcdn.net/Kt9cq/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="364" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+				</script>
+			</div>
+			<div class="six columns">
+				<h5>About 45% of Greenfield homeowners pay less than $1,850/mo</h5>
+				<p>This chart summarizes the distribution of costs across all ownership units in the area, most of which last transacted years ago.About 45% of Greenfield homeowners pay below $1,850/mo compared to the $2,213 and $2,763 required to afford a condo and single family on today’s market.</p>
+				<iframe title="" aria-label="Bar Chart" id="datawrapper-chart-WvCzf" src="https://datawrapper.dwcdn.net/WvCzf/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="173" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+				</script>
+			</div>
+		</div>
+		<div class="row">
+			<div class="nine columns">
+				<p>These charts reveal the significant difference between how much most homeowners currently pay per month (right) and it would cost per month to own a home purchased on today’s market (left).</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="six columns">
+				<h5>Today’s average asking rent in Greenfield is about $1,600.</h5>
+				<p>The rents indicated at right compare recent listings in Greenfield with recently built market rate rental housing within an hour drive from Greenfield (13 properties with 10+ units built since 2018). The gap between these contemporary benchmarks and prevailing local rents help explain why developers seem to be passing over Greenfield for the time being. However, this gap may be narrowing, improving the prospects for new construction in Greenfield.</p>
+				<table>
+					<tr>
+						
+						<th>Unit size</th>
+						<th>Greenfield asking rent</th>
+						<th>Recently built developments asking rent</th>
+					</tr>
+					<tr>
+						<td>Studio</td>
+						<td>$878</td>
+						<td>$1,919</td>
+					</tr>
+					<tr>
+						<td>1 bed</td>
+						<td>$1,449</td>
+						<td>$1,804</td>
+					</tr>
+					<tr>
+						<td>2 beds</td>
+						<td>$1,676</td>
+						<td>$2,188</td>
+					</tr>
+					<tr>
+						<td>3 beds</td>
+						<td>$2,013</td>
+						<td>N/A</td>
+					</tr>
+				</table>
+			</div>
+			<div class="six columns">
+				<h5>About 40% of Greenfield renters pay less than $1,600/mo.</h5>
+				<p>The average asking rent should be understood as the typical cost to a household signing a new lease under current conditions. In reality, because this is a single average value, actual asking rents may vary depending on characteristics such as size, location, and property features but they will collectively track along this trendline. The “Current renter costs” total includes newly occupied units along with units that have been occupied for longer (and where rent may have been set at a much lower rate than today’s asking price).</p>
+				<iframe title="" aria-label="Bar Chart" id="datawrapper-chart-Mmol6" src="https://datawrapper.dwcdn.net/Mmol6/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="173" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+				</script>
+			</div>
+		</div>
+		<div class="row">
+			<div class="nine columns">
+				<p>These charts illustrate the  difference between how much many renters currently pay per month (right) and it would cost per month to sign a new lease on today’s market (left). While there are many renters paying comfortably more than current asking prices, a significant portion would likely be unable to afford a new apartment if they needed to relocate within the community.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns">
+				<h3>Shortage of lower-cost and smaller units</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="nine columns">
+				<p>Comparing the needs of current residents with the current housing stock reveals potential misalignments between supply and demand.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="six columns">
+				<h5>Housing needs of current residents</h5>
+				<p>This chart simulates the unit mix today’s local population would choose if all households could move into units that match their likely bedroom preferences and willingness to pay.</p>
+				<iframe title="" aria-label="Stacked Bars" id="datawrapper-chart-pEkRF" src="https://datawrapper.dwcdn.net/pEkRF/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="245" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+				</script>
+			</div>
+			<div class="six columns">
+				<h5>Current housing supply and gaps</h5>
+				<p>These charts compare this “need” to the current housing stock. Highlighted positive gaps indicate under-supply; negative gaps indicate oversupply.</p>
+				<table>
+					<tr>
+						<th>Monthly cost</th>
+						<th>Need</th>
+						<th>Supply</th>
+						<th style="background-color: #fff2cc;">Gap</th>
+					</tr>
+					<tr>
+						<td>Below $700</td>
+						<td>2252</td>
+						<td>2063</td>
+						<td style="background-color: #fff2cc;">189</td>
+					</tr>
+					<tr>
+						<td>$700-$1,400</td>
+						<td>2285</td>
+						<td>1948</td>
+						<td style="background-color: #fff2cc;">337</td>
+					</tr>
+					<tr>
+						<td>$1,400-$1,850</td>
+						<td>1207</td>
+						<td>1135</td>
+						<td style="background-color: #fff2cc;">72</td>
+					</tr>
+					<tr>
+						<td>$1,850-$2,350</td>
+						<td>703</td>
+						<td>678</td>
+						<td style="background-color: #fff2cc;">25</td>
+					</tr>
+					<tr>
+						<td>$2,350-$2,800</td>
+						<td>506</td>
+						<td>550</td>
+						<td>-44</td>
+					</tr>
+					<tr>
+						<td>Above $2,800</td>
+						<td>1276</td>
+						<td>1855</td>
+						<td>-579</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="nine columns">
+				<p>This is an instructive but largely hypothetical analysis due to the scale of the gap and the challenge of delivering new affordable housing in large quantities.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns">
+				<h3>Little new construction in recent decades.</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="six columns">
+				<h5>Most of Greenfield’s housing stock was built before 1960.</h5>
+				<p>Nearly three quarters of Greenfield’s housing production took place before 1970 with very little new construction in recent years. This table chronicles the community's development history, indicating decades with relatively more or less construction activity. 2020 or later is approximate as new housing units are completed.</p>
+				<iframe title="" aria-label="Table" id="datawrapper-chart-9ttr4" src="https://datawrapper.dwcdn.net/9ttr4/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="353" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+				</script>
+			</div>
+			<div class="six columns">
+				<h5>About 70 units have been permitted over the past decade.</h5>
+				<p>Building permitting history is a proxy for construction activity over time. Greenfield has seen very little new permits during the past decade. While there are some proposed developments on the horizon, none have reached the building permit stage yet.</p>
+				<iframe title="" aria-label="Column Chart" id="datawrapper-chart-SHy1i" src="https://datawrapper.dwcdn.net/SHy1i/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="377" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+				</script>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns">
+				<h3>The pace of local housing development is starting to increase.</h3>
+				<h5>There are numerous new projects in the pipeline, especially downtown.</h5>
+			</div>
+		</div>
+		<div class="row">
+			<div class="six columns">
+				<p><img src="./images/Greenfield development map.PNG" height=auto width=100% title="CommunityScale" alt="CommunityScale"></a></p>
+			</div>
+			<div class="six columns">
+				<div class="scroll-container">
+					<div class="scroll-content">
+						<table>
+							<tr>
+								<th>Project</th>
+								<th>Units</th>
+								<th>Developer</th>
+								<th>City funding</th>
+								<th>Other support</th>
+							</tr>
+							<tr>
+								<td>Wilson’s redevelopment</td>
+								<td>61 apartments</td>
+								<td>Community Builders</td>
+								<td>ARPA and HoDAG</td>
+								<td>Mass Development</td>
+							</tr>
+							<tr>
+								<td>60 Wells Street shelter</td>
+								<td>36 apartments + 30 shelter beds</td>
+								<td>CSO</td>
+								<td>CDGB and CPA</td>
+								<td>EOHLC funding</td>
+							</tr>
+							<tr>
+								<td>156-176 Main Street</td>
+								<td>20-70 apartments (TBD)</td>
+								<td>Tim Grader, Rural Development Inc.</td>
+								<td>CPA</td>
+								<td>Mass Housing Partnership funding</td>
+							</tr>
+							<tr>
+								<td>184 Petty Plain Rd</td>
+								<td>1 single family</td>
+								<td>Habitat for Humanity</td>
+								<td>CPA</td>
+								<td>N/A</td>
+							</tr>
+							<tr>
+								<td>187 Hope St</td>
+								<td>2-3 duplex/triplex</td>
+								<td>Oxbow Design</td>
+								<td>CPA</td>
+								<td>N/A</td>
+							</tr>
+							<tr>
+								<td>71 Montague City Road</td>
+								<td>13 apartments</td>
+								<td>Olive Street Development</td>
+								<td>N/A</td>
+								<td>N/A</td>
+							</tr>
+							<tr>
+								<td>107 Fairview Street</td>
+								<td>6 duplexes</td>
+								<td>N/A</td>
+								<td>N/A</td>
+								<td>N/A</td>
+							</tr>
+							<tr>
+								<th>TOTAL</th>
+								<th>145-199 units or more</th>
+							</tr>
+							<tr>
+								<td><i>Scroll to the right for development details</i></td>
+
+						</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="divider">
+		<div class="container">
+			<div class="Twelve columns">
+				<h2 id="Demand" class="inline-text"><img src="images/Demand.png" class="inline-image" title="People">Demand</h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns" style="margin-top: 2%">
+				<p>In order to calibrate future housing production to best meet the community's needs, two factors must be established: how many units are needed in total and what is the right mix of unit types and prices. The following section addresses each of these factors to inform recommendations that effectively meet local need and reflect the community's values and priorities.</p>
+				<h3>Sources of housing demand in Greenfield</h3>
+				<h5>Greenfield's housing demand orginates from both current and new households.</h5>
+			</div>
+		</div>
+		<div class="row">
+			<div class="eight columns" style="margin-top: 2%">
+				<p><img src="./images/Greenfield sankey - simple demand.png" height=auto width=100% title="CommunityScale" alt="CommunityScale"></a></p>
+			</div>
+			<div class="four columns" style="margin-top: 2%">
+				<p>Based on the analyses contained within the People and Place sections of this report, Greenfield’s housing demand is driven by a number of factors that include both unmet demand among existing residents and new growth among projected and potential future residents. This chart illustrates demand origins on the left and demand drivers on the right.</p>
+				<p>Each demand driver in more detail below followed by an estimated quantification of total demand by income level.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns" style="margin-top: 2%">
+				<h3>Attainability gaps</h3>
+				<h5>There are not enough low-cost units to meet demand among low-income residents.</h5>
+			</div>
+		</div>
+		<div class="row">
+			<div class="eight columns" style="margin-top: 2%">
+				<iframe title="" aria-label="Column Chart" id="datawrapper-chart-qE148" src="https://datawrapper.dwcdn.net/qE148/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="376" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+				</script>
+			</div>
+			<div class="four columns" style="margin-top: 2%">
+				<p>The gap analysis compares Greenfield’s distribution of household incomes to its mix of housing options by cost to uncover potential supply shortages at different price points. The analysis identified a shortage of 623 units across a range of price points below $2,350 per month.</p>
+				<p>Adding units at these price points would help take pressure off existing residents currently experiencing cost burden.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns" style="margin-top: 2%">
+				<h3>Downsizing seniors</h3>
+				<h5>A growing number of seniors will seek new housing options as they age.</h5>
+			</div>
+		</div>
+		<div class="row">
+			<div class="eight columns" style="margin-top: 2%">
+				<table>
+					<tr>
+						<td>65+ households of 1-2 people in 3+ bedroom units</td>
+						<td>1,560</td>
+					</tr>
+					<tr>
+						<td>Potential annual downsizing rate</td>
+						<td>3%</td>
+					</tr>
+					<tr>
+						<th>Units needed to accommodate downsizers over 10 years</th>
+						<th>468</th>
+					</tr>
+				</table>
+			</div>
+			<div class="four columns" style="margin-top: 2%">
+				<p>Greenfield’s seniors currently comprises a large portion of the total population and this share is expected to grow considerably over the next 10 years. By 2034, the City will be home to about 6,000 households aged 65+.</p>
+			</div>
+			<div class="twelve columns" style="margin-top: 2%">
+				<p>About 26% of Greenfield’s senior households contain 1-2 people and live in a 3+ bedroom home. Given changing housing preferences and needs as people age, it is likely a portion of these senior households will explore downsizing options such as a smaller, accessible unit with fewer bedrooms located in a walkable location. If 3% of these households sought new units to downsize into each year, the city would need to add 468 units appropriate for seniors over the next 10 years.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns" style="margin-top: 2%">
+				<h3>Organic household growth</h3>
+				<h5>Greenfield is expected to grow modestly over the next decade.</h5>
+			</div>
+		</div>
+		<div class="row">
+			<div class="eight columns" style="margin-top: 2%">
+				<iframe title="" aria-label="Interactive area chart" id="datawrapper-chart-1OBVO" src="https://datawrapper.dwcdn.net/1OBVO/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="381" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+				</script>
+			</div>
+			<div class="four columns" style="margin-top: 2%">
+				<p>Recent trends suggests Greenfield should expect to grow by 417 new households over the next 10 years.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="eight columns" style="margin-top: 2%">
+				<table>
+					<tr>
+						<td>Household growth: 417</td>
+						<td>Forecasted from 2024 to 2034.</td>
+					</tr>
+					<tr>
+						<td>Overcrowding adjustment: 0</td>
+						<td>Local rate of 1.3% is below the national average of 3.4%.</td>
+					</tr>
+					<tr>
+						<td>Replacement housing: 43</td>
+						<td>0.05% of the housing stock is replaced annually</td>
+					</tr>
+					<tr>
+						<td>Vacancy adjustment: 0</td>
+						<td>Local rate of 5.3% is above the healthy market minimum of 5%</td>
+					</tr>
+					<tr>
+						<td>Substandard adjustment: 0</td>
+						<td>Local rate of 0.1% is below the national average of 0.4%</td>
+					</tr>
+					<tr>
+						<th>Total units needed: 460</th>
+						<th>To keep up with growth and maintain a healthy housing stock</th>
+					</tr>
+				</table>
+			</div>
+			<div class="four columns" style="margin-top: 2%">
+				<p>To meet the trends extended growth projection, Greenfield would need to add 460 housing units over the next decade. This production target combines demand driven by net household growth as well as other factors which also contribute to maintaining a suitable housing supply over time.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns" style="margin-top: 2%">
+				<h3>Workforce housing</h3>
+				<h5>There are not enough units to house essential workers employed in Greenfield.</h5>
+			</div>
+		</div>
+		<div class="row">
+			<div class="eight columns" style="margin-top: 2%">
+				<table>
+					<tr>
+						<td>Jobs in Greenfield</td>
+						<td>9,138</td>
+					</tr>
+					<tr>
+						<td>Workers that live and work in Greenfield</td>
+						<td>2,175</td>
+					</tr>
+					<tr>
+						<td>Portion of local workforce that live in Greenfield</td>
+						<td>24%</td>
+					</tr>
+					<tr>
+						<td>Desired portion by 2034</td>
+						<td>35%</td>
+					</tr>
+					<tr>
+						<th>Additional workforce households (and units) by 2034</th>
+						<th>780</th>
+					</tr>
+				</table>			</div>
+			<div class="four columns" style="margin-top: 2%">
+				<p>As a regional employment hub, Greenfield contains more jobs than housing units. However, only about 24% of the people working in Greenfield live in the city as well. While many of the workers who commute into the city simply choose to live somewhere else, a portion of these workers may prefer to live in the city if the right housing options were available. Increasing  the rate of local workforce living in Greenfield to 35% by 2034 would require providing housing affordable to 780 households.</p>
+			</div>
+			<div class="twelve columns" style="margin-top: 2%">
+				<p>Increasing  the rate of local workforce living in Greenfield to 35% by 2034 would require providing 780 additional households.</p>
+				<p>“Workforce housing” is typically considered affordable to 80-120% AMI, a segment of the population vulnerable to displacement if they cannot find adequate and affordable housing, including essential services such as police, firefighters, teachers, skilled nurses, and municipal employees.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns" style="margin-top: 2%">
+				<h3>Market rate housing</h3>
+				<h5>The greater Greenfield region could support more market rate housing.</h5>
+			</div>
+		</div>
+		<div class="row">
+			<div class="eight columns" style="margin-top: 2%">
+				<table>
+					<tr>
+						<td>Region size</td>
+						<td>152,894 renter households</td>
+					</tr>
+					<tr>
+						<td>Greenfield size</td>
+						<td>4,499 renter households</td>
+					</tr>
+					<tr>
+						<td>Greenfield share of the market</td>
+						<td>2.9% of the region</td>
+					</tr>
+					<tr>
+						<td>Regional market rate unit potential</td>
+						<td>1,873 units/year</td>
+					</tr>
+					<tr>
+						<th>Greenfield's potential share</th>
+						<th>55 units/year</th>
+					</tr>
+				</table>			</div>
+			<div class="four columns" style="margin-top: 2%">
+				<p>Greenfield could also consider positioning to attract a larger share of the Western Mass market rate housing demand. These units could be added on top of those intended to address local housing needs.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns" style="margin-top: 2%">
+				<h3>Housing demand by income level</h3>
+				<h5>Each source of demand includes a different mix of household incomes.</h5>
+			</div>
+		</div>
+		<div class="row">
+			<div class="eight columns" style="margin-top: 2%">
+				<p><img src="./images/Greenfield sankey - demand AMI.png" height=auto width=100% title="CommunityScale" alt="CommunityScale"></a></p>
+			</div>
+			<div class="four columns" style="margin-top: 2%">
+				<p>This diagram illustrates how Greenfield’s 10-year housing demand translate into income levels. While this distribution reflects expected demand over the next 10 years, it does not necessarily coincide with the housing production target in the following Results section. Housing for each income level requires a different set of policies, programs, and subsidies to build. In many cases, there simply is not enough capacity to meet the full demand right away.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns" style="margin-top: 2%">
+				<h3>Calibrating housing parameters to meet demand</h3>
+				<p>The following summarizes current trends and housing preferences that should be considered when programming and designing housing to best meet demand.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="six columns" style="margin-top: 2%">
+				<h5>Today's general housing preferences</h5>
+				<p>Household structures have changed significantly since much of Greenfield’s housing supply was built. Today, households are smaller, less likely to have one or more children, and more likely to include non-family or multi generational cohabitants. Future development should be designed to reflect the current diversity of household structures and wider range of housing needs and preferences.</p>
+				<table>
+					<tr><td><b>Smaller units:</b> Fewer bedrooms for smaller households.</td></tr>
+					<tr><td><b>Parking optional:</b> Enabling a car-free or car-lite lifestyle.</td></tr>
+					<tr><td><b>Roommate-ready:</b> Accommodating non-family households.</td></tr>
+					<tr><td><b>Green building:</b> Efficient, low-impact design and systems.</td></tr>
+					<tr><td><b>Multigenerational:</b> Space for adult children or elderly parents.</td></tr>
+				</table>
+			</div>
+			<div class="six columns" style="margin-top: 2%">
+				<h5>Workforce housing</h5>
+				<p>“Workforce housing” is typically oriented to middle-income households that often consist of singles, couples, or young families. Jobs typically attributed to this group include public safety officers, educators, municipal employees, skilled nurses, and other occupations that often require some level of higher education and pay wages equating to 80-120% AMI.</p>
+				<table>
+					<tr><td><b>Moderate cost for families:</b> Workforce families can afford units that cost $1,800 - 2,400 per month.</td></tr>
+					<tr><td><b>Lower cost for singles:</b> One-person workforce households cannot afford as much as dual-earner families.</td></tr>
+					<tr><td><b>Not to too many bedrooms:</b> Workforce-oriented housing should include mostly 0-2 bedroom units.</td></tr>
+					<tr><td><b>Well-maintained:</b> Workforce can afford rent/mortgage but large capital costs can be destabilizing.</td></tr>
+					<tr><td><b>Near job centers:</b> Households can save money by living close to work and commuting without a car.</td></tr>
+				</table>
+		</div>
+		<div class="row">
+			<div class="six columns" style="margin-top: 2%">
+				<h5>Senior housing</h5>
+				<p>“Workforce housing” is typically oriented to middle-income households that often consist of singles, couples, or young families. Jobs typically attributed to this group include public safety officers, educators, municipal employees, skilled nurses, and other occupations that often require some level of higher education and pay wages equating to 80-120% AMI.</p>
+				<table>
+					<tr><td><b>Universal design:</b> Accommodating to people with limited mobility.</td></tr>
+					<tr><td><b>Low maintenance:</b> Less space and less work to keep up.</td></tr>
+					<tr><td><b>Energy efficient:</b> Lower utility costs affordable on fixed income.</td></tr>
+					<tr><td><b>Accessible:</b> Single-level with ADA-compliant doors, baths, etc.</td></tr>
+					<tr><td><b>Social:</b> Designed and located to promote an active community life.</td></tr>
+				</table>
+			</div>
+			<div class="six columns" style="margin-top: 2%">
+				<h5>Downtown living</h5>
+				<p>Recent years have seen growing demand for housing in walkable, downtown or compact neighborhood environments. This can include both dense urban places as well as small town downtowns. Increasingly, the most desirable and competitive housing markets are those with access to the qualities and amenities of a downtown environment within walking distance.</p>
+				<table>
+					<tr><td><b>Walkability:</b> More daily needs and wants accessible on foot.</td></tr>
+					<tr><td><b>Transit:</b> Close to bus lines and train connections.</td></tr>
+					<tr><td><b>Amenities:</b> Near restaurants, shops, and cultural destinations.</td></tr>
+					<tr><td><b>Services:</b> Access to health and community services without a car.</td></tr>
+					<tr><td><b>Activity:</b> Located in a lively and vibrant neighborhood.</td></tr>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="twelve columns" style="margin-top: 2%">
+				<h5>Homeownership</h5>
+			</div>
+		</div>
+		<div class="row">
+			<div class="six columns" style="margin-top: 2%">
+				<iframe title="" aria-label="Stacked Columns" id="datawrapper-chart-PgmMc" src="https://datawrapper.dwcdn.net/PgmMc/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="364" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+				</script>
+			</div>
+			<div class="six columns" style="margin-top: 2%">
+				<p>Greenfield has a lower rate of homeownership than the rest of the state or the national average. While it is important to maintain a significant rental housing supply to provide options for people not interested in or ready to buy, a majority of people prefer homeownership for at least certain periods of their lives, such as starting and raising a family.</p>
+				<p>The Greenfield community has expressed interest in stronger pathways to homeownership, especially among middle-income households. Adding more ownership units will contribute to this goal, along with other support such as financial assistance to overcome high down payment and financing costs.</p>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<div class="divider">
+		<div class="container">
+			<div class="Twelve columns">
+				<h2 id="Results" class="inline-text"><img src="images/Results.png" class="inline-image" title="Results">Results</h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns" style="margin-top: 2%">
+				<h3>Housing production target</h3>
+				<p>Our tentative target is 800-1,000 units, but we're still confirming how realistic this is from a subsidy and market standpoint.</p>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row">
+		<hr>
+	</div>
+	</div>
+
+	<div class="container">
+		<div class="unresponsive">
+			<div class="content-size"><a href="https://greenfield-ma.gov/"><img src="./images/community.png" height=auto width=30px title="Greenfield" alt="Greenfield"></a></div>
+			<div class="fill-space">
+				<p class="small-text"><a href="https://greenfield-ma.gov/departments/community_and_economic_development/index.php">Greenfield's Community and Economic Development Department</a> works to improve the quality of life for all in Greenfield by supporting the development of business, housing, and community.</p>
+			</div>
+		</div>
+
+		<div class="unresponsive">
+			<div class="content-size"><a href="http://communityscale.io"><img src="./images/CommunityScale-logo.png" height=auto width=30px title="CommunityScale" alt="CommunityScale"></a></div>
+			<div class="fill-space">
+				<p class="small-text"><a href="http://communityscale.io">CommunityScale</a> is a pioneering urban planning and spatial data analysis company serving clients across the United States. <br> Follow CommunityScale on <a href="https://www.linkedin.com/company/communityscale">LinkedIn</a> and <a href="https://twitter.com/CommunityScale">Twitter/X</a>. This dashboard is <a href="https://github.com/CommunityScale/Greenfield">open source</a> MIT license.</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
