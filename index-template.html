@@ -45,6 +45,8 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<link rel="icon" type="image/png" href="images/favicon.png">
 
+	
+
 </head>
 
 <body>
@@ -54,32 +56,38 @@
 
 	<!-- Sticky header -->
 	<div class="sticky">
-		<div class="container" >
+		<div class="nav-container" >
 			<p class="inline-text">
-					<a href="https://greenfield-ma.gov/" target="_blank"><img src="images/community.png" alt="Greenfield" class="inline-image"></a>
-					<span class="title"><b> Housing Study |</span></b><a href="#Overview">Overview</a> | <a href="#People">People</a> | <a href="#Place"> Place </a>| <a href="#Demand">Demand</a>
-				</p>
+				<img src="images/community.png" alt="Greenfield" class="inline-logo">
+				<span class="title">Housing Plan 2024</span>
+			</p>
+			<div class="navbar">
+				<a href="#Overview">Back to top</a>  |  <a href="#People">People</a>  |  <a href="#Place"> Place </a> | <a href="#Demand">Demand</a>
+			</div>
 		</div>
 	</div>
 
 	<!-- Cover banner -->
 
-	<div class="cover">
+	<div id="Overview" class="cover">
 		<div class="container" style="margin-top: 0">
 			<h1>City of Greenfield
-				<br>Housing Plan Dashboard
+				<br>Housing Plan Executive Summary
 			</h1>
+			
+			<div class="row">
+				<div class="nine columns" style="margin-top: 20px">
+					<p>This dashboard was created by <a href="http://communityscale.io">CommunityScale</a> for the <a href="https://greenfield-ma.gov/">City of Greenfield</a>. The objective of this dashboard is to outline the plan's objectives and priorities, share key observations and findings about the local housing landscape, and highlight recommended strategies to increase housing production and address affordability challenges.</p>
+				</div>
+				<div class="one-half column" style="margin-top: 20px">
+				</div>
+			</div>
 		</div>
+		
 	</div>
 
 	<div class="container">
-		<div class="row">
-			<div class="nine columns" style="margin-top: 20px">
-				<p>This dashboard was created by <a href="http://communityscale.io">CommunityScale</a> for the <a href="https://greenfield-ma.gov/">City of Greenfield</a>. The objective of this dashboard is to outline the plan's objectives and priorities, share key observations and findings about the local housing landscape, and highlight recommended strategies to increase housing production and address affordability challenges.</p>
-			</div>
-			<div class="one-half column" style="margin-top: 20px">
-			</div>
-		</div>
+		
 		<!-- Hide the TOC
 		<div class="row">
 			<div class="one-fifth column"><a href="#Overview"><img src="images/Overview.png" class="icon" title="Overview"><br><b>Overview</b></a>, introducing the purpose of this dashboard.</div>
@@ -90,37 +98,26 @@
 		 -->
 	</div>
 
-	<!-- Divider row -->
-	<div class="divider">
-		<div class="container">
-			<div class="Twelve columns">
-				<h2 id="Overview" class="inline-text"><img src="images/Overview.png" class="inline-image" title="Overview">Overview</h2>
-			</div>
-		</div>
-	</div>
-
 	<!-- Header row -->
-	<div class="container">
-		<div class="row">
-			<div class="twelve columns" style="margin-top: 2%">
-				<h3>Greenfield is developing a city-wide housing plan.</h3>				
-			</div>
-		</div>
 
-		<!-- Row with image and text -->
-		<div class="row">
-			<div class="eight columns" style="margin-top: 2%">
-				<p><img src="./images/Greenfield aerial photo.jpg" height=auto width=100% title="CommunityScale" alt="CommunityScale"></a></p>
-			</div>
-			<div class="four columns" style="margin-top: 2%">
-				<p>This housing needs assessment combines extensive quantitative data analysis with consideration of the community’s goals for its future to produce a 10-year housing production target.</p>
-				<p>This website version of the study highlights key observations and findings. The Housing Needs Assessment document is also availble in a much more detailed, downloadable pdf format:</p>
-				<p><a href="https://docs.google.com/presentation/d/1RgziR0sq0CrdSUhm9lWpNB4xV_gJkDU1canw5z0JRwE/edit?usp=sharing" target="blank"><button>Housing Needs Assessment Report</button></a></p>
-				<p>The People and Place sections of this report were presented at a public meeting on May 22, 2024. A video of this presentation is available <a href="https://www.youtube.com/watch?v=LUDM-pgbCJo" target="blank">here</a>.
-			</div>
+	<div class="overview">
+		<div class="container">
+			<!-- Row with image and text -->
+			<div class="row">
+				<div class="six columns" style="margin-top: 2%">
+					<p><img src="./images/Greenfield aerial photo.jpg" height=auto width=100% title="CommunityScale" alt="CommunityScale"></a></p>
+				</div>
+				<div class="six columns" style="margin-top: 2%">
+					<h4>Greenfield is developing a city-wide housing plan</h4>
+					<p>This housing needs assessment combines extensive quantitative data analysis with consideration of the community’s goals for its future to produce a 10-year housing production target.</p>
+					<p>This website version of the study highlights key observations and findings. The Housing Needs Assessment document is also availble in a much more detailed, downloadable pdf format:</p>
+					<p><a href="https://docs.google.com/presentation/d/1RgziR0sq0CrdSUhm9lWpNB4xV_gJkDU1canw5z0JRwE/edit?usp=sharing" target="blank"><button>View Detailed Report</button></a></p>
+					<p>The People and Place sections of this report were presented at a public meeting on May 22, 2024. A video of this presentation is available <a href="https://www.youtube.com/watch?v=LUDM-pgbCJo" target="blank">here</a>.
+				</div>
 			</div>
 		</div>
 	</div>
+	
 
 	<!-- Header row -->
 	<div class="container">
@@ -173,19 +170,30 @@
 	</div>	
 
 	<!-- People Divider row -->
-	<div class="divider">
+	<div class="divider" id="People">
 		<div class="container">
 			<div class="Twelve columns">
-				<h2 id="People" class="inline-text"><img src="images/Place.png" class="inline-image" title="People">People</h2>
+				<div class="divider-header">
+					<div class="divider-icon">
+						<img src="images/People.svg" class="inline-image" title="People">
+					</div>
+					<h2 class="inline-text">People</h2>
+				</div>
 				<h5>The following section profiles the people of Greenfield, detailing characteristics such as income, household structure, and cost burden. These indicators combine to describe the local population's housing needs and preferences which inform this report's recommended strategies for new housing production to meet demand and fill gaps in affordability and attainability.</h5>
+				<div class="chip-container">
+					<a href="#Aging"><button  class="button-primary">Aging</button></a>
+					<a href="#Income"><button  class="button-primary">Income</button></a>
+					<a href="#Household-structure"><button  class="button-primary">Household structure</button></a>
+					<a href="#Cost-burden"><button  class="button-primary">Cost burden</button></a>
+				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="container">
+	<div id="Aging" class="container">
 		<div class="row section">
 			<div class="twelve columns" style="margin-top: 2%">
-				<h3>Greenfield's population is growing older.</h3>
+				<h3>Greenfield's population is growing older</h3>
 				<h6>Greenfield’s population has been rapidly aging over the past decade, with the 65+ age group growing while other age groups shrink. If these trends continue through the next decade, about a third of the population will be over 65+ with fewer adults at ages associated with starting and raising families. In general, younger households are more likely to prefer family-oriented housing and neighborhoods where as older households may have a broader range of preferences and priorities, including senior options.</h6>
 			</div>
 		</div>
@@ -193,13 +201,17 @@
 		<!-- Row with image and text -->
 		<div class="row insight">
 			<div class="six columns" style="margin-top: 2%">
-				<iframe title="" aria-label="Interactive area chart" id="datawrapper-chart-skZAr" src="https://datawrapper.dwcdn.net/skZAr/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="388" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
-				</script>
+				<h4>The 65+ population is projected to increase by 30% over the next decade.</h4>
+				<!-- <p>This chart illustrates trends in population by age cohort, both historic and projected. The projection is based on recent trends extended. Depending on economic, policy, and other conditions, the actual future age distribution may vary over time.</p> -->
 			</div>
 			<div class="six columns" style="margin-top: 2%">
-				<h4>The 65+ population is projected to increase by 30% over the next decade.</h4>
-				<p>This chart illustrates trends in population by age cohort, both historic and projected. The projection is based on recent trends extended. Depending on economic, policy, and other conditions, the actual future age distribution may vary over time.</p>
+				<iframe title="" aria-label="Interactive area chart" id="datawrapper-chart-skZAr" src="https://datawrapper.dwcdn.net/skZAr/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="388" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+				</script>
+				<figcaption>
+					This chart illustrates trends in population by age cohort, both historic and projected. The projection is based on recent trends extended. Depending on economic, policy, and other conditions, the actual future age distribution may vary over time.
+				</figcaption>
 			</div>
+			
 		</div>
 	</div>
 
@@ -243,7 +255,7 @@
 		</div>
 	</div>
 
-	<div class="container">
+	<div id="Income"  class="container">
 		<div class="row">
 			<div class="twelve columns" style="margin-top: 2%">
 				<h3>Middle-income households have limited housing options in Greenfield.</h3>
@@ -369,7 +381,7 @@
 		</div>
 	</div>
 
-	<div class="container">
+	<div class="container" id="Household-structure">
 		<div class="row">
 			<div class="twelve columns" style="margin-top: 2%">
 				<h3>Demographics by income level</h3>
@@ -418,7 +430,7 @@
 		</div>
 	</div>
 
-	<div class="container">
+	<div class="container" id="Cost-burden">
 		<div class="row">
 			<div class="twelve columns" style="margin-top: 2%">
 				<h3>Cost burden in Greenfield</h3>
@@ -437,10 +449,15 @@
 		</div>
 	</div>
 
-	<div class="divider">
+	<div class="divider" id="Place">
 		<div class="container">
 			<div class="Twelve columns">
-				<h2 id="Place" class="inline-text"><img src="images/Place.png" class="inline-image" title="People">Place</h2>
+				<div class="divider-header">
+					<div class="divider-icon">
+						<img src="images/Place.svg" class="inline-image" title="Place">
+					</div>
+					<h2 class="inline-text">Place</h2>
+				</div>
 				<h5>	The following section profiles the community spatially and assesses Greenfield’s housing stock and affordability, detailing characteristics such as structure type, bedroom count, and development timeframe as well as household costs and market pricing for local rental and ownership units.</h5>
 			</div>
 		</div>
@@ -796,10 +813,15 @@
 		</div>
 	</div>
 
-	<div class="divider">
+	<div class="divider" id="Demand">
 		<div class="container">
 			<div class="Twelve columns">
-				<h2 id="Demand" class="inline-text"><img src="images/Demand.png" class="inline-image" title="People">Demand</h2>
+				<div class="divider-header">
+					<div class="divider-icon">
+						<img src="images/Demand.svg" class="inline-image" title="People"/>
+					</div>
+					<h2 class="inline-text">Demand</h2>
+				</div>
 				<h5>In order to calibrate future housing production to best meet the community's needs, two factors must be established: how many units are needed in total and what is the right mix of unit types and prices. The following section addresses each of these factors to inform recommendations that effectively meet local need and reflect the community's values and priorities.</h5>
 			</div>
 		</div>
