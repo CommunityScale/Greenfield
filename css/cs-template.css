@@ -44,12 +44,12 @@ Table of contents
   padding-bottom: 100px;
   margin-top: 20px;
   margin-bottom: 20px;
-  border-top: 1px solid #A4ADB7;
-  border-bottom: 1px solid #c5cbd1;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
   background-image: url("map-background.png");
   background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: 5px -15px 25px 1px #dfdfdf;
+  box-shadow: 5px -15px 25px 1px #ededed;
 }
 
 .divider-icon {
@@ -78,15 +78,51 @@ Table of contents
   border-radius: 10px;
   display: flex;
   align-items: center;
-  border: 1px solid #e2e2e2;
+  border: 1px solid #EAEAEA;
+  box-shadow: 0px 1px 3px #EAEAEA ;
+}
+
+.insight h5 {
+  text-align: left;
+}
+
+.key-takeaway {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.key-takeaway p {
+  max-width: 750px;
+  margin-bottom: 10px;
+  margin-top: 50px;
+}
+
+.key-takeaway h5 {
+  max-width: 750px;
 }
 
 .cover {
-  background-image: url('../images/cover.jpg');
+  background-image: url('../images/cover-image.png'), linear-gradient(to right,rgba(56,63,69,0.9),rgba(138, 121, 70, 0.75));
   background-size: cover;
+  background-blend-mode: multiply;
   padding-top: 50px;
   padding-bottom: 10px;
   margin-top: 0px;
+  color: white;
+}
+
+.cover h1 {
+  color: white;
+}
+
+.cover a {
+  color: #E2C982;
+}
+
+.cover a:hover {
+  color: #8A7946;
 }
 
 .overview {
@@ -100,6 +136,7 @@ Table of contents
 }
 
 .container {
+  scroll-margin-top: 80px;
   position: relative;
   width: 100%;
   max-width: 1200px;
@@ -187,11 +224,19 @@ table {
     width: 90%;
     padding: 0;
   }
+
+  .nav-container {
+    width: 90%;
+  }
 }
 
 /* For devices larger than 700px */
 @media (min-width: 750px) {
   .container {
+    width: 90%;
+  }
+
+  .nav-container {
     width: 90%;
   }
 
@@ -492,6 +537,10 @@ figcaption {
   letter-spacing: 0;
 }
 
+p.large {
+  font-size: 1.75rem;
+}
+
 /* Larger than phablet 
 @media (min-width: 750px) {
   h1 {
@@ -527,14 +576,19 @@ p {
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  color: #222;
+  color: #504525;
 }
 
 a:hover {
-  color: #000000;
+  color: #8A7946;
 }
 
 /* Links in sticky header */
+
+.sticky {
+  display: flex;
+  justify-content: center;
+}
 
 .sticky a {
   text-decoration: none;
@@ -548,10 +602,7 @@ a:hover {
 .nav-container {
   display: flex;
   justify-content: space-between;
-  width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
 }
 
 
@@ -789,7 +840,7 @@ code {
   font-size: 90%;
   white-space: nowrap;
   background: #F1F1F1;
-  border: 1px solid #E1E1E1;
+  border: 1px solid #EAEAEA;
   border-radius: 4px;
 }
 
@@ -802,11 +853,31 @@ pre>code {
 
 /* Tables
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Add this class to <table> to get a table that has columns of the same width */
+.table-fixed {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr.emphasize td {
+  font-weight: 900;
+  color: #8A7946;
+}
+
+th {
+  border-bottom: 1px solid #EAEAEA;
+  padding: 10px;
+}
+
 th,
 td {
-  padding: 12px 15px;
   text-align: left;
-  border-bottom: 1px solid #E1E1E1;
+}
+
+td {
+  padding: 5px 10px
 }
 
 th:first-child,
@@ -843,7 +914,7 @@ p,
 ul,
 ol,
 form {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 
@@ -913,7 +984,7 @@ there.
   }
 
   .title {
-    display: none;
+    /* display: none; */
   }
 
   .insight {
