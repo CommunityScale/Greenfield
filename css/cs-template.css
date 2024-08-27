@@ -75,7 +75,7 @@ Table of contents
 .insight {
   background-color: #FFFFFF;
   padding: 25px;
-  border-radius: 10px;
+  border-radius: 5px;
   display: flex;
   align-items: center;
   border: 1px solid #EAEAEA;
@@ -199,25 +199,6 @@ Table of contents
   box-sizing: border-box;
   flex: 0 0 auto; /* Does not grow or shrink, only as wide as its content */
 }
-
-
-/* styles.css */
-.scroll-container {
-  width: 100%; /* Adjust width as needed */
-  overflow-x: auto; /* Enables horizontal scrolling */
-  white-space: nowrap; /* Prevents content from wrapping to a new line */
-  }
-
-.scroll-content {
-  display: inline-block; /* Keeps content in a single line */
-  width: auto; /* Example width to show scrolling, adjust as needed */
-}
-
-table {
-  width: auto; /* Ensures the table takes the width of its content */
-  border-collapse: collapse; /* Ensures table borders collapse to remove extra space */
-}
-
 
 /* For devices larger than 1px */
 @media (min-width: 1px) {
@@ -461,10 +442,6 @@ img {
   border-radius: 10px;
 }
 
-div {
-  /*border: 1px solid #f00;*/
-
-}
 
 /* Typography
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -876,21 +853,16 @@ pre>code {
 /* Tables
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-/* Add this class to <table> to get a table that has columns of the same width */
-.table-fixed {
-  table-layout: fixed;
-  width: 100%;
-  border-collapse: collapse;
-}
-
-tr.emphasize td {
+/* highlight an entire row, cell, or header by applying the "important" class */
+tr.important td, th.important, td.important {
   font-weight: 900;
-  color: #8A7946;
+  background-color: #FFEDB7;
 }
 
 th {
   border-bottom: 1px solid #EAEAEA;
-  padding: 10px;
+  padding: 5px;
+  font-weight: 400;
 }
 
 th,
@@ -899,19 +871,57 @@ td {
 }
 
 td {
-  padding: 5px 10px
+  border-bottom: 1px solid #ffffff;
+  padding: 5px;
 }
 
-th:first-child,
-td:first-child {
-  padding-left: 0;
+/* Add this class to <table> to get a table that has columns of the same width */
+.uniform-columns {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
 }
 
-th:last-child,
-td:last-child {
-  padding-right: 0;
+/* Just specify which column numbers you want center or right aligned, i.e. if you want column 2 & 7 right aligned, and 3 centered, just do:
+<table class="tr2 tc3 tr7"> */
+
+.tr1 td:nth-child(1), .tr1 th:nth-child(1),
+.tr2 td:nth-child(2), .tr2 th:nth-child(2),
+.tr3 td:nth-child(3), .tr3 th:nth-child(3),
+.tr4 td:nth-child(4), .tr4 th:nth-child(4),
+.tr5 td:nth-child(5), .tr5 th:nth-child(5),
+.tr6 td:nth-child(6), .tr6 th:nth-child(6),
+.tr7 td:nth-child(7), .tr7 th:nth-child(7),
+.tr8 td:nth-child(8), .tr8 th:nth-child(8),
+.tr9 td:nth-child(9), .tr9 th:nth-child(9) { text-align:right }
+
+.tc1 td:nth-child(1), .tc1 th:nth-child(1),
+.tc2 td:nth-child(2), .tc2 th:nth-child(2),
+.tc3 td:nth-child(3), .tc3 th:nth-child(3),
+.tc4 td:nth-child(4), .tc4 th:nth-child(4),
+.tc5 td:nth-child(5), .tc5 th:nth-child(5),
+.tc6 td:nth-child(6), .tc6 th:nth-child(6),
+.tc7 td:nth-child(7), .tc7 th:nth-child(7),
+.tc8 td:nth-child(8), .tc8 th:nth-child(8),
+.tc9 td:nth-child(9), .tc9 th:nth-child(9) { text-align:center }
+
+
+/* Horizontal scrolling tables */
+.scroll-container {
+  width: 100%; /* Adjust width as needed */
+  overflow-x: auto; /* Enables horizontal scrolling */
+  white-space: nowrap; /* Prevents content from wrapping to a new line */
+  }
+
+.scroll-content {
+  display: inline-block; /* Keeps content in a single line */
+  width: auto; /* Example width to show scrolling, adjust as needed */
 }
 
+table {
+  width: auto; /* Ensures the table takes the width of its content */
+  border-collapse: collapse; /* Ensures table borders collapse to remove extra space */
+}
 
 /* Spacing
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -1003,10 +1013,6 @@ there.
 @media (max-width: 750px) {
   .icon {
     display: none;
-  }
-
-  .title {
-    /* display: none; */
   }
 
   .insight {
