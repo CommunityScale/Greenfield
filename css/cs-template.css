@@ -93,8 +93,8 @@ Table of contents
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 /* Special cover at the top of the page */
-.cover {
-  background-image: url('../images/cover-image.png'), linear-gradient(to right,rgba(56,63,69,0.9),rgba(138, 121, 70, 0.75));
+.cover, .footer {
+  background-image: url('../images/cover-image.jpg'), linear-gradient(to right,rgba(56,63,69,0.9),rgba(138, 121, 70, 0.75));
   background-size: cover;
   background-blend-mode: multiply;
   padding: 50px 0;
@@ -102,16 +102,24 @@ Table of contents
   color: white;
 }
 
-.cover h1 {
+.cover h1, .footer h1 {
   color: white;
   max-width: 100%;
 }
 
-.cover a {
+.cover p, .footer p {
+  text-shadow: 0px 0px 2px rgba(24, 27, 30, 0.9);
+}
+
+.footer p {
+  margin-bottom: 0;
+}
+
+.cover a, .footer a {
   color: #E2C982;
 }
 
-.cover a:hover {
+.cover a:hover, .footer a:hover {
   color: #8A7946;
 }
 
@@ -654,11 +662,6 @@ a:hover {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-}
-
-.title {
-  display: inline-block;
-  /* Display as inline-block by default */
 }
 
 /* Chips
