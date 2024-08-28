@@ -28,7 +28,7 @@ Table of contents
   /* For Safari */
   position: sticky;
   top: 0;
-  background-color: #383F45; 
+  background-color: #252C31; 
   color: #FFFFFF;
   /* Dark background for visibility */
   padding: 5px 0;
@@ -72,68 +72,6 @@ Table of contents
   margin: 20px 0;
 }
 
-.insight {
-  background-color: #FFFFFF;
-  padding: 25px;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  border: 1px solid #EAEAEA;
-  box-shadow: 0px 1px 3px #EAEAEA ;
-}
-
-.insight h5 {
-  text-align: left;
-}
-
-.key-takeaway {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 50px;
-}
-
-.key-takeaway p {
-  max-width: 750px;
-  margin-bottom: 10px;
-  margin-top: 50px;
-}
-
-.key-takeaway h5 {
-  max-width: 750px;
-}
-
-.cover {
-  background-image: url('../images/cover-image.png'), linear-gradient(to right,rgba(56,63,69,0.9),rgba(138, 121, 70, 0.75));
-  background-size: cover;
-  background-blend-mode: multiply;
-  padding: 50px 0;
-  margin-top: 0px;
-  color: white;
-}
-
-.cover h1 {
-  color: white;
-}
-
-.cover a {
-  color: #E2C982;
-}
-
-.cover a:hover {
-  color: #8A7946;
-}
-
-.overview {
-  background-color: white;
-  padding: 20px 0;
-}
-
-.title {
-  display: inline-block;
-  /* Display as inline-block by default */
-}
-
 .container {
   scroll-margin-top: 80px;
   position: relative;
@@ -151,7 +89,76 @@ Table of contents
   box-sizing: border-box;
 }
 
-.twelve.columns {
+/* Custom layouts
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Special cover at the top of the page */
+.cover {
+  background-image: url('../images/cover-image.png'), linear-gradient(to right,rgba(56,63,69,0.9),rgba(138, 121, 70, 0.75));
+  background-size: cover;
+  background-blend-mode: multiply;
+  padding: 50px 0;
+  margin-top: 0px;
+  color: white;
+}
+
+.cover h1 {
+  color: white;
+  max-width: 100%;
+}
+
+.cover a {
+  color: #E2C982;
+}
+
+.cover a:hover {
+  color: #8A7946;
+}
+
+.overview {
+  background-color: white;
+  padding: 20px 0;
+}
+
+/* Add the insight class to a row to get a nice container for your insight */
+.insight {
+  background-color: #FFFFFF;
+  padding: 25px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #EAEAEA;
+  box-shadow: 0px 1px 3px #EAEAEA ;
+}
+
+.insight h5 {
+  text-align: left;
+}
+
+/* Progress tracker section */
+.progress-tracker {
+  background: #383F45;
+  padding: 50px 0;
+  margin-top: 1px;
+}
+
+.progress-tracker h1,
+.progress-tracker h2,
+.progress-tracker h3,
+.progress-tracker h4,
+.progress-tracker h5,
+.progress-tracker h6 {
+  color: white;
+  text-align: center;
+}
+
+.progress-tracker p {
+  color: white;
+  text-align: center;
+}
+
+/* Use center-align class to center content in columns */
+.center-align {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -185,16 +192,18 @@ Table of contents
   margin-left: 20px;
 }
 
-.goals {
+.boxes {
   display: flex;
   justify-content: space-around;
   padding: 0px;
   text-align: center;
   box-sizing: border-box;
+  margin: 50px 0 0 0;
 }
 
-.goal {
-  width: 30%;
+.box {
+  width: 100%;
+  margin: 0 20px;
 }
 
 .content-size {
@@ -218,13 +227,17 @@ Table of contents
     padding: 0 10px;
   }
 
-  .goals {
+  .boxes {
     flex-direction: column;
     align-items: center;
   }
 
-  .goal {
-    width: 90%;
+  .box {
+    width: 100%;
+  }
+
+  .title {
+    display: none;
   }
 }
 
@@ -234,13 +247,18 @@ Table of contents
     width: 90%;
   }
 
+  .title {
+    display:block;
+  }
+
   .nav-container {
     width: 90%;
     padding: 0 10px;
   }
 
-  .goals {
+  .boxes {
     flex-direction: row;
+    align-items: flex-start;
   }
 
   .column,
@@ -470,7 +488,7 @@ h6 {
 }
 
 h1 {
-  font-size: 4.6rem;
+  font-size: 4.75rem;
   line-height: 1;
   letter-spacing: -.18rem;
   font-weight: 600;
@@ -542,22 +560,34 @@ p.large {
   font-size: 1.75rem;
 }
 
-/* Larger than phablet 
-@media (min-width: 750px) {
+p.large-number {
+  font-size: 6rem;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 1000;
+  line-height: 1;
+}
+
+p.large-emoji {
+  font-size: 3.5rem;
+  line-height: 1;
+}
+
+/* Larger than phablet  */
+@media (max-width: 750px) {
   h1 {
-    font-size: 5.0rem;
+    font-size: 4.0rem;
   }
 
   h2 {
-    font-size: 4.2rem;
+    font-size: 3.5rem;
   }
 
   h3 {
-    font-size: 3.6rem;
+    font-size: 3.0rem;
   }
 
   h4 {
-    font-size: 3.0rem;
+    font-size: 2.5rem;
   }
 
   h5 {
@@ -572,7 +602,7 @@ p.large {
 p {
   margin-top: 0;
 }
-*/
+
 
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -603,7 +633,6 @@ a:hover {
 .nav-container {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   max-width: 1200px;
 }
 
@@ -615,6 +644,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  flex-wrap: wrap;
 }
 
 .nav-container .navbar a {
@@ -624,6 +654,11 @@ a:hover {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+}
+
+.title {
+  display: inline-block;
+  /* Display as inline-block by default */
 }
 
 /* Chips
