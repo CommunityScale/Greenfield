@@ -109,7 +109,7 @@ Table of contents
 
 /* Special cover at the top of the page */
 .cover, .footer {
-  background-image: url('../images/client/cover-image.jpg'), linear-gradient(to right,rgba(56,63,69,0.9),rgba(138, 121, 70, 0.75));
+  background-image: url('../images/client/Greenfield\ aerial\ photo.jpg'), linear-gradient(to right,rgba(56,63,69,0.9),rgba(138, 121, 70, 0.75));
   background-size: cover;
   background-blend-mode: multiply;
   background-repeat: no-repeat;
