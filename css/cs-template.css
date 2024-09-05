@@ -23,21 +23,6 @@ Table of contents
 
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.sticky {
-  position: -webkit-sticky;
-  /* For Safari */
-  position: sticky;
-  top: 0;
-  background-color: #252C31; 
-  color: #FFFFFF;
-  /* Dark background for visibility */
-  padding: 5px 0;
-  margin: 0;
-  z-index: 1000;
-  /* Ensure it stays on top of other content */
-  width: 100%;
-  /* Full width */
-}
 
 .divider {
   padding-top: 100px;
@@ -51,7 +36,6 @@ Table of contents
 .divider-icon {
   border-radius: 100px;
   background-color: #D5DCE4;
-  margin-right: 20px;
   height: 65px;
   width: 65px;
 }
@@ -173,7 +157,6 @@ Table of contents
 .progress-tracker h5,
 .progress-tracker h6 {
   color: white;
-  text-align: center;
 }
 
 .progress-tracker p {
@@ -186,6 +169,7 @@ Table of contents
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .inline-text {
@@ -230,7 +214,7 @@ Table of contents
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin: 0 20px;
+  margin: 15px 20px;
 }
 
 .content-size {
@@ -242,8 +226,8 @@ Table of contents
   flex: 0 0 auto; /* Does not grow or shrink, only as wide as its content */
 }
 
-/* For devices larger than 1px */
-@media (min-width: 1px) {
+/* For devices less than 749px */
+@media (max-width: 749px) {
   .container {
     width: 90%;
     padding: 0;
@@ -266,6 +250,14 @@ Table of contents
   .title {
     display: none;
   }
+
+  .divider-header {
+    flex-direction: column; 
+  }
+
+  .divider-header .divider-icon {
+    margin-right: 0;
+  }
 }
 
 /* For devices larger than 750px */
@@ -286,6 +278,14 @@ Table of contents
   .boxes {
     flex-direction: row;
     align-items: flex-start;
+  }
+
+  .divider-header {
+    flex-direction: row;
+  }
+
+  .divider-header .divider-icon {
+    margin-right: 20px;
   }
 
   .column,
@@ -515,7 +515,7 @@ h6 {
 }
 
 h1 {
-  font-size: 4.75rem;
+  font-size: 4.25rem;
   line-height: 1;
   letter-spacing: -.18rem;
   font-weight: 600;
@@ -526,7 +526,6 @@ h2 {
   line-height: 1.25;
   letter-spacing: -.1rem;
   font-weight: 600;
-  text-align: center;
 }
 
 h3 {
@@ -534,7 +533,6 @@ h3 {
   line-height: 1.3;
   letter-spacing: -.1rem;
   font-weight: 400;
-  text-align: center;
 }
 
 h4 {
@@ -555,8 +553,6 @@ h5 {
   font-size: 1.3rem;
   line-height: 1.45;
   letter-spacing: 0;
-
-  text-align: center;
 }
 
 h6 {
@@ -568,8 +564,10 @@ h6 {
   font-size: 1.2rem;
   line-height: 1.45;
   letter-spacing: 0;
+}
 
-  text-align: center;
+p {
+  margin-top: 0;
 }
 
 figcaption {
@@ -602,33 +600,12 @@ p.large-emoji {
 
 /* Larger than phablet  */
 @media (max-width: 750px) {
-  h1 {
-    font-size: 4.0rem;
+
+  /* Simply changing the px font size on html will affect all fonts set in rem to be a certain % smaller */
+  html {
+    font-size: 12px;
   }
 
-  h2 {
-    font-size: 3.5rem;
-  }
-
-  h3 {
-    font-size: 3.0rem;
-  }
-
-  h4 {
-    font-size: 2.5rem;
-  }
-
-  h5 {
-    font-size: 2.0rem;
-  }
-
-  h6 {
-    font-size: 1.5rem;
-  }
-}
-
-p {
-  margin-top: 0;
 }
 
 
@@ -642,31 +619,76 @@ a:hover {
   color: #8A7946;
 }
 
-/* Links in sticky header */
-
-.sticky {
-  display: flex;
-  justify-content: center;
-}
-
-.sticky a {
-  text-decoration: none;
-  color: #FFFFFF;
-}
-
-.sticky a:hover {
-  text-decoration: underline;
-}
-
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1200px;
-}
-
-
 /* Navbar
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.sticky {
+  position: -webkit-sticky;
+  /* For Safari */
+  position: sticky;
+  top: 0;
+  background-color: #252C31; 
+  color: #FFFFFF;
+  /* Dark background for visibility */
+  padding: 5px;
+  margin: 0;
+  z-index: 1000;
+  /* Ensure it stays on top of other content */
+  width: 100%;
+  /* Full width */
+}
+
+/* Style the navigation menu */
+.topnav {
+  overflow: hidden;
+}
+
+.logo-and-menu {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+
+#targetDiv {
+  transition-timing-function: ease;
+  height: 0px;
+  overflow: hidden;
+  transition: height 0.2s ease-out;
+}
+
+#targetDiv.expanded {
+  height: auto;
+}
+
+/* Style navigation menu links */
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+  border-radius: 3px;
+  text-align: center;
+}
+
+/* Style the hamburger menu */
+.topnav a.menu-icon {
+  /* background: black; */
+}
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+  background-color: #dddddd47;
+  cursor: pointer;
+}
+
+/* Style the active link (or home/logo) */
+.active {
+  background-color: #04AA6D;
+  color: white;
+}
 
 .navbar {
   display: flex;
