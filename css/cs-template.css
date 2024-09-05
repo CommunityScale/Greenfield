@@ -51,7 +51,6 @@ Table of contents
 .divider-icon {
   border-radius: 100px;
   background-color: #D5DCE4;
-  margin-right: 20px;
   height: 65px;
   width: 65px;
 }
@@ -186,6 +185,7 @@ Table of contents
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .inline-text {
@@ -230,7 +230,7 @@ Table of contents
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin: 0 20px;
+  margin: 15px 20px;
 }
 
 .content-size {
@@ -242,8 +242,8 @@ Table of contents
   flex: 0 0 auto; /* Does not grow or shrink, only as wide as its content */
 }
 
-/* For devices larger than 1px */
-@media (min-width: 1px) {
+/* For devices less than 749px */
+@media (max-width: 749px) {
   .container {
     width: 90%;
     padding: 0;
@@ -266,6 +266,14 @@ Table of contents
   .title {
     display: none;
   }
+
+  .divider-header {
+    flex-direction: column; 
+  }
+
+  .divider-header .divider-icon {
+    margin-right: 0;
+  }
 }
 
 /* For devices larger than 750px */
@@ -286,6 +294,14 @@ Table of contents
   .boxes {
     flex-direction: row;
     align-items: flex-start;
+  }
+
+  .divider-header {
+    flex-direction: row;
+  }
+
+  .divider-header .divider-icon {
+    margin-right: 20px;
   }
 
   .column,
@@ -515,7 +531,7 @@ h6 {
 }
 
 h1 {
-  font-size: 4.75rem;
+  font-size: 4.25rem;
   line-height: 1;
   letter-spacing: -.18rem;
   font-weight: 600;
@@ -526,7 +542,6 @@ h2 {
   line-height: 1.25;
   letter-spacing: -.1rem;
   font-weight: 600;
-  text-align: center;
 }
 
 h3 {
@@ -534,7 +549,6 @@ h3 {
   line-height: 1.3;
   letter-spacing: -.1rem;
   font-weight: 400;
-  text-align: center;
 }
 
 h4 {
@@ -555,8 +569,6 @@ h5 {
   font-size: 1.3rem;
   line-height: 1.45;
   letter-spacing: 0;
-
-  text-align: center;
 }
 
 h6 {
@@ -568,8 +580,10 @@ h6 {
   font-size: 1.2rem;
   line-height: 1.45;
   letter-spacing: 0;
+}
 
-  text-align: center;
+p {
+  margin-top: 0;
 }
 
 figcaption {
@@ -602,33 +616,12 @@ p.large-emoji {
 
 /* Larger than phablet  */
 @media (max-width: 750px) {
-  h1 {
-    font-size: 4.0rem;
+
+  /* Simply changing the px font size on html will affect all fonts set in rem to be a certain % smaller */
+  html {
+    font-size: 12px;
   }
 
-  h2 {
-    font-size: 3.5rem;
-  }
-
-  h3 {
-    font-size: 3.0rem;
-  }
-
-  h4 {
-    font-size: 2.5rem;
-  }
-
-  h5 {
-    font-size: 2.0rem;
-  }
-
-  h6 {
-    font-size: 1.5rem;
-  }
-}
-
-p {
-  margin-top: 0;
 }
 
 
