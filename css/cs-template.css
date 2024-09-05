@@ -23,21 +23,6 @@ Table of contents
 
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.sticky {
-  position: -webkit-sticky;
-  /* For Safari */
-  position: sticky;
-  top: 0;
-  background-color: #252C31; 
-  color: #FFFFFF;
-  /* Dark background for visibility */
-  padding: 5px 0;
-  margin: 0;
-  z-index: 1000;
-  /* Ensure it stays on top of other content */
-  width: 100%;
-  /* Full width */
-}
 
 .divider {
   padding-top: 100px;
@@ -172,7 +157,6 @@ Table of contents
 .progress-tracker h5,
 .progress-tracker h6 {
   color: white;
-  text-align: center;
 }
 
 .progress-tracker p {
@@ -635,31 +619,76 @@ a:hover {
   color: #8A7946;
 }
 
-/* Links in sticky header */
-
-.sticky {
-  display: flex;
-  justify-content: center;
-}
-
-.sticky a {
-  text-decoration: none;
-  color: #FFFFFF;
-}
-
-.sticky a:hover {
-  text-decoration: underline;
-}
-
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1200px;
-}
-
-
 /* Navbar
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.sticky {
+  position: -webkit-sticky;
+  /* For Safari */
+  position: sticky;
+  top: 0;
+  background-color: #252C31; 
+  color: #FFFFFF;
+  /* Dark background for visibility */
+  padding: 5px;
+  margin: 0;
+  z-index: 1000;
+  /* Ensure it stays on top of other content */
+  width: 100%;
+  /* Full width */
+}
+
+/* Style the navigation menu */
+.topnav {
+  overflow: hidden;
+}
+
+.logo-and-menu {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+
+#targetDiv {
+  transition-timing-function: ease;
+  height: 0px;
+  overflow: hidden;
+  transition: height 0.2s ease-out;
+}
+
+#targetDiv.expanded {
+  height: auto;
+}
+
+/* Style navigation menu links */
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+  border-radius: 3px;
+  text-align: center;
+}
+
+/* Style the hamburger menu */
+.topnav a.menu-icon {
+  /* background: black; */
+}
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+  background-color: #dddddd47;
+  cursor: pointer;
+}
+
+/* Style the active link (or home/logo) */
+.active {
+  background-color: #04AA6D;
+  color: white;
+}
 
 .navbar {
   display: flex;
