@@ -91,49 +91,7 @@
 	</div>
   </div>
 
-	<script>
-		const clickDiv = document.getElementById("clickDiv");
-		const targetDiv = document.getElementById("targetDiv");
-
-		clickDiv.addEventListener("click", function() {
-			// Toggle the 'expanded' class to handle expansion and collapsing
-			targetDiv.classList.toggle("expanded");
-
-			if (targetDiv.style.height === '0px' || targetDiv.style.height === '') {
-				// Measure the auto height by temporarily setting the div's height to 'auto'
-				const autoHeight = targetDiv.scrollHeight + 'px';
-				
-				// Set height to current computed height
-				targetDiv.style.height = autoHeight;
-
-				// Once the animation is done, set the height to 'auto' to adapt to content changes
-				setTimeout(() => {
-					targetDiv.style.height = 'auto';
-				}, 500); // Match the transition duration
-			} else {
-				// If it's expanded, collapse it
-				targetDiv.style.height = targetDiv.scrollHeight + 'px'; // Set the height to its current scroll height
-				setTimeout(() => {
-					targetDiv.style.height = '0px'; // Shrink back to zero
-				}, 10); // Small delay to allow the previous height setting to take effect
-			}
-		});
-
-		// Add event listener to the links inside targetDiv to remove expanded class and collapse div
-		targetDiv.addEventListener("click", function(event) {
-			if (event.target.tagName === "A") {
-				// Remove the 'expanded' class when a link is clicked
-				targetDiv.classList.remove("expanded");
-
-				// Collapse the div by setting height back to 0
-				targetDiv.style.height = targetDiv.scrollHeight + 'px'; // Set height to its current height
-				setTimeout(() => {
-					targetDiv.style.height = '0px'; // Animate height back to 0
-				}, 10);
-			}
-		});
-	</script>
-  
+	
 
 	<!-- Sticky header -->
 	<!-- <div class="sticky">
@@ -206,29 +164,40 @@
 					<p><i>Last updated on August 27, 2024</i></p>
 				</div>
 			</div>
+
 			<div class="row">
-				<div class="boxes">
-					<div class="box">
-						<p class="large-emoji">🚧</p>
-						<p class="large-number">898</p>
-						<p>Units currently in the pipeline</p>
-					</div>
-					<div class="box">
-						<p class="large-emoji">📝</p>
-						<p class="large-number">140</p>
-						<p>Units currently permitted but not completed</p>
-					</div>
-					<div class="box">
-						<p class="large-emoji">🧱</p>
-						<p class="large-number">589</p>
-						<p>Units completed since 2024</p>
-					</div>
-					<div class="box">
-						<p class="large-emoji">📈</p>
-						<p class="large-number">34%</p>
-						<p>Towards reaching goal of 11,250 units by 2029</p>
+
+				<!-- If you put content in two six column divs then there will be an extra breakpoint to go into two columns -->
+				<div class="six columns center-align" style="">
+					<div class="boxes">
+						<div class="box">
+							<p class="large-emoji">🚧</p>
+							<p class="large-number">898</p>
+							<p>Units currently in the pipeline</p>
+						</div>
+						<div class="box">
+							<p class="large-emoji">📝</p>
+							<p class="large-number">140</p>
+							<p>Units currently permitted but not completed</p>
+						</div>
 					</div>
 				</div>
+
+				<div class="six columns center-align" style="">
+					<div class="boxes">
+						<div class="box">
+							<p class="large-emoji">🧱</p>
+							<p class="large-number">589</p>
+							<p>Units completed since 2024</p>
+						</div>
+						<div class="box">
+							<p class="large-emoji">📈</p>
+							<p class="large-number">34%</p>
+							<p>Towards reaching goal of 11,250 units by 2029</p>
+						</div>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</div>
@@ -236,7 +205,7 @@
 	<div class="progress-tracker">
 		<div class="container">
 			<div class="row">
-				<div class="twelve columns center-align" style="margin-top: 2%">
+				<div class="twelve columns center-align" style="">
 					<p>PROGRESS TRACKER</p>
 					<h4>What progress have we made towards meeting our goals?</h4>
 					<p><i>Last updated on August 27, 2024</i></p>
@@ -258,11 +227,6 @@
 						<p class="large-emoji">🧱</p>
 						<p class="large-number">589</p>
 						<p>Units completed since 2024</p>
-					</div>
-					<div class="box">
-						<p class="large-emoji">📈</p>
-						<p class="large-number">34%</p>
-						<p>Towards reaching goal of 11,250 units by 2029</p>
 					</div>
 				</div>
 			</div>
@@ -1347,7 +1311,7 @@
 	</div>
 	</div>
 
-
+	<script type="text/javascript" src="nav-javascript.js"></script>
 
 	<!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
