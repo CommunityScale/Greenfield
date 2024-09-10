@@ -206,7 +206,7 @@ Table of contents
   padding: 0px;
   text-align: center;
   box-sizing: border-box;
-  margin: 50px 0 0 0;
+  margin: 0 0 0 0;
 }
 
 .box {
@@ -214,7 +214,7 @@ Table of contents
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin: 15px 20px;
+  margin: 25px 15px 0 15px;
 }
 
 .content-size {
@@ -226,8 +226,19 @@ Table of contents
   flex: 0 0 auto; /* Does not grow or shrink, only as wide as its content */
 }
 
+
+.nav-options {
+  display: flex;
+}
+
 /* For devices less than 749px */
 @media (max-width: 749px) {
+
+  .desktop-pages {
+    display: none;
+  }
+  
+
   .container {
     width: 90%;
     padding: 0;
@@ -247,9 +258,9 @@ Table of contents
     width: 100%;
   }
 
-  .title {
+  /* .title {
     display: none;
-  }
+  } */
 
   .divider-header {
     flex-direction: column; 
@@ -260,8 +271,31 @@ Table of contents
   }
 }
 
+/* For devices smaller than 1024px */
+@media (max-width: 1024px) {
+
+  .six .boxes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .six .box {
+    width: 100%;
+  }
+
+}
+
 /* For devices larger than 750px */
 @media (min-width: 750px) {
+  
+  .desktop-pages {
+    display: flex;
+  }
+
+  .mobile-menu-icon {
+    display: none;
+  }
+
   .container {
     width: 90%;
   }
@@ -603,7 +637,15 @@ p.large-emoji {
 
   /* Simply changing the px font size on html will affect all fonts set in rem to be a certain % smaller */
   html {
-    font-size: 12px;
+    font-size: 13px;
+  }
+
+  body {
+    font-size: 1.2rem;
+  }
+
+  figcaption {
+    font-size: 1rem;
   }
 
 }
@@ -630,17 +672,21 @@ a:hover {
   background-color: #252C31; 
   color: #FFFFFF;
   /* Dark background for visibility */
-  padding: 5px;
+  padding: 5px 1%;
   margin: 0;
   z-index: 1000;
   /* Ensure it stays on top of other content */
-  width: 100%;
+  width: 98%;
   /* Full width */
+  display: flex;
+  justify-content: space-around;
 }
 
 /* Style the navigation menu */
 .topnav {
   overflow: hidden;
+  width: 100%;
+  max-width: 1160px;
 }
 
 .logo-and-menu {
@@ -648,6 +694,7 @@ a:hover {
   display: flex;
   justify-content: space-between;
 }
+
 
 /* Hide the links inside the navigation menu (except for logo/home) */
 
