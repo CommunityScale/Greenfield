@@ -669,24 +669,20 @@ a:hover {
   /* For Safari */
   position: sticky;
   top: 0;
-  background-color: #252C31; 
+  background-color: #254B13; 
   color: #FFFFFF;
   /* Dark background for visibility */
-  padding: 5px 1%;
+  padding: 5px;
   margin: 0;
   z-index: 1000;
   /* Ensure it stays on top of other content */
-  width: 98%;
+  width: 100%;
   /* Full width */
-  display: flex;
-  justify-content: space-around;
 }
 
 /* Style the navigation menu */
 .topnav {
   overflow: hidden;
-  width: 100%;
-  max-width: 1160px;
 }
 
 .logo-and-menu {
@@ -694,7 +690,6 @@ a:hover {
   display: flex;
   justify-content: space-between;
 }
-
 
 /* Hide the links inside the navigation menu (except for logo/home) */
 
