@@ -785,6 +785,12 @@ a:hover {
   vertical-align: middle; /* Align image vertically with text */
 }
 
+.image-cover {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 /* Buttons
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .button,
