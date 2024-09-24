@@ -115,10 +115,10 @@
 		<div class="row insight">
 			<div class="six columns" style="margin-top: 2%">
 				<h4>How affordable is Greenfield?</h4>
-				<h5>$<span id="csv-value"></span> gap between the current median home value and what a median income household can afford</h5><script src="datagrabber.js"></script>
-				<p>$XXX change in the last month</p>
-				<p>$XXX change in the last year</p>
-				<p>This calculation is based on a XX% downpayment, ##% interest (FRED), XXX% property tax, etc.</p>
+				<h5><span id="current-gap"></span> gap between the current median home value and what a median income household can afford</h5>
+				<p><span id="change-month"></span> change in the last month</p>
+				<p><span id="change-year"></span> change in the last year</p>
+				<p>This calculation is based on a XX% downpayment, <span id="mortgage-rate"></span>% interest (FRED), XXX% property tax, etc.</p>
 			</div>
 			<div class="six columns" style="margin-top: 2%">
 				<iframe title="" aria-label="Interactive line chart" id="datawrapper-chart-lKV5Q" src="https://datawrapper.dwcdn.net/lKV5Q/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="359" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
@@ -144,7 +144,7 @@
 	</div>
 
 	<script type="text/javascript" src="nav-javascript.js"></script>
-
+	<script src="datagrabber.js"></script>
 	<!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
