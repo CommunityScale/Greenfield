@@ -21,15 +21,18 @@ jobs:
           token: ${{ secrets.REPO_PAT }}     # Use a PAT stored in repository secrets
           path: private-repo
 
-      - name: Copy the CSV file, overwriting the existing file
+      - name: Copy the CSV file and overwrite the existing file
         run: cp -f private-repo/c_income_zhvi_mortgage_comprehensive_affordability.csv .
 
-      - name: Ensure the file is staged for commit
-        run: git add -A c_income_zhvi_mortgage_comprehensive_affordability.csv
+      - name: Stage the modified file for commit
+        run: git add c_income_zhvi_mortgage_comprehensive_affordability.csv
+
+      - name: Display the status to ensure file is staged
+        run: git status  # This will show whether the file is being tracked and changes are detected.
 
       - name: Commit the CSV file
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git commit -m "Overwrite CSV from private repo"
-          git push
+          git commit -m "Overwrite CSV from private repo" || echo "No changes to commit"
+          git push || echo "Nothing to push"
