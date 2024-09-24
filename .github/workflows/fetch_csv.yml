@@ -1,0 +1,32 @@
+name: Fetch CSV from Private Repo
+
+on:
+  workflow_dispatch:  # Enable manual trigger
+schedule:
+  # Run the job on the 13th of every month at 00:10 UTC
+  - cron: '10 0 13 * *'
+
+jobs:
+  fetch_csv:
+    runs-on: ubuntu-latest
+
+    - name: Checkout the public repository
+      uses: actions/checkout@v3
+      
+    - name: Checkout the private repository
+      uses: actions/checkout@v3
+      with:
+        repository: CommunityScale/Automation  # Private repo
+        token: ${{ secrets.GITHUB_TOKEN }}     # Use a PAT stored in repository secrets
+        path: private-repo
+
+    - name: Copy the CSV file
+      run: cp private-repo/c_income_zhvi_mortgage_comprehensive_affordability.csv .
+
+    - name: Commit the CSV file
+      run: |
+        git config --local user.name "github-actions[bot]"
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git add c_income_zhvi_mortgage_comprehensive_affordability.csv
+        git commit -m "Fetch CSV from private repo"
+        git push
