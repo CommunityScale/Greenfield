@@ -10,7 +10,7 @@ jobs:
   fetch_csv:
     runs-on: ubuntu-latest
 
-    steps:  # This is where the steps start; everything under 'steps' should be indented
+    steps:
       - name: Checkout the public repository
         uses: actions/checkout@v3
       
@@ -21,13 +21,15 @@ jobs:
           token: ${{ secrets.REPO_PAT }}     # Use a PAT stored in repository secrets
           path: private-repo
 
-      - name: Copy the CSV file
-        run: cp private-repo/c_income_zhvi_mortgage_comprehensive_affordability.csv .
+      - name: Copy the CSV file, overwriting the existing file
+        run: cp -f private-repo/c_income_zhvi_mortgage_comprehensive_affordability.csv .
+
+      - name: Ensure the file is staged for commit
+        run: git add -A c_income_zhvi_mortgage_comprehensive_affordability.csv
 
       - name: Commit the CSV file
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git add c_income_zhvi_mortgage_comprehensive_affordability.csv
-          git commit -m "Fetch CSV from private repo"
+          git commit -m "Overwrite CSV from private repo"
           git push
