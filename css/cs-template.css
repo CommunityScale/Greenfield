@@ -28,8 +28,6 @@ Table of contents
   scroll-margin-top: 50px;
   padding-top: 100px;
   padding-bottom: 100px;
-  margin-top: 20px;
-  margin-bottom: 20px;
   border-top: 1px solid #ebebeb;
   border-bottom: 1px solid #ebebeb;
 }
@@ -94,6 +92,7 @@ Table of contents
 
 /* Special cover at the top of the page */
 .cover, .footer {
+  background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: multiply;
   padding: 50px 0;
