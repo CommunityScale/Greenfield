@@ -661,6 +661,16 @@ p.large-emoji {
 
 }
 
+/* For numberformat.js ––––––––––––––––––––––––––– */
+
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
+}
+
 
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

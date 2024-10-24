@@ -52,63 +52,12 @@
 </head>
 
 <body>
+    <script src="datagrabber.js"></script>
+
+	
 	 
 	<!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-	<!-- Sticky header -->
-	<div class="sticky">
-		<div class="topnav">
-			<div class="logo-and-menu">
-				<p class="inline-text">
-					<img src="images/client/client-logo.png" alt="Greenfield" class="inline-logo">
-					<span class="title">Housing Plan 2024</span>
-				</p>
-				<div class="nav-options">
-					<div class="desktop-pages">
-						<!-- Links must be added here for desktop -->
-						<a href="#Overview"><span class="fa fa-arrow-up"></span> Back to top</a>
-						<a href="#ZHVI">Median home value</a>
-						<a href="#Place"> Place </a>
-						<a href="#Demand">Demand</a>
-						<a href="#Results">Results</a>
-					</div>
-					<div id="clickDiv" class="mobile-menu-icon">
-						<a class="menu-icon">
-							<i class="fa fa-bars"></i>
-						  </a>
-					</div>
-				</div>
-				
-			</div>
-			<div id="targetDiv" class="">
-				<!-- Links must be added here again for mobile -->
-				<a href="#Overview"><span class="fa fa-arrow-up"></span> Back to top</a>
-				<a href="#ZHVI">Median home value</a>
-				<a href="#Place"> Place </a>
-				<a href="#Demand">Demand</a>
-				<a href="#Results">Results</a>
-			</div>
-		</div>
-	</div>
-	  
-
-	<!-- Cover banner -->
-
-	<div id="Overview" class="cover">
-		<div class="container" style="margin-top: 0">
-			<h1>City of Greenfield
-				<br>Dynamic housing metrics
-			</h1>
-			
-			<div class="row">
-				<div class="nine columns" style="margin-top: 20px">
-					<p>This dashboard was created by <a href="http://communityscale.io">CommunityScale</a> for the <a href="https://greenfield-ma.gov/departments/community_and_economic_development/index.php"></a>City of Greenfield</a>. The objective of this dashboard is to outline the plan's objectives and priorities, share key observations and findings about the local housing landscape, and highlight recommended strategies to increase housing production and address affordability challenges.</p>
-				</div>
-			</div>
-		</div>
-		
-	</div>
 
 		<!-- Row with image and text -->
 	<div class="container" id="ZHVI">
@@ -116,9 +65,11 @@
 			<div class="six columns" style="margin-top: 2%">
 				<h4>How affordable is Greenfield?</h4>
 				<h5><span id="current-gap"></span> gap between the current median home value and what a median income household can afford</h5>
-				<p><span id="change-month"></span> change in the last month</p>
-				<p><span id="change-year"></span> change in the last year</p>
+				<p><span class="number" id="change-month"></span> change since <span id="last-month"></span></p>
+				<p><span class="number" id="change-year"></span> change in the last year</p>
 				<p>This calculation is based on a XX% downpayment, <span id="mortgage-rate"></span>% interest (FRED), XXX% property tax, etc.</p>
+
+			
 			</div>
 			<div class="six columns" style="margin-top: 2%">
 				<iframe title="" aria-label="Interactive line chart" id="datawrapper-chart-lKV5Q" src="https://datawrapper.dwcdn.net/lKV5Q/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="359" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
@@ -129,22 +80,7 @@
 	</div>
 
 
-	<div class="footer">
-		<div class="container">
-			<div class="unresponsive" style="margin-bottom: 30px;">
-				<img src="./images/community.png" height=auto width=30px title="Greenfield" alt="Greenfield">
-				<p><a href="https://greenfield-ma.gov/departments/community_and_economic_development/index.php">Greenfield's Community and Economic Development Department</a> works to improve the quality of life for all in Greenfield by supporting the development of business, housing, and community.</p>
-			</div>
-	
-			<div class="unresponsive">
-				<img src="./images/CommunityScale-logo.png" height=auto width=30px title="CommunityScale" alt="CommunityScale">
-				<p><a href="http://communityscale.io">CommunityScale</a> is a pioneering urban planning and spatial data analysis company serving clients across the United States. <br> Follow CommunityScale on <a href="https://www.linkedin.com/company/communityscale">LinkedIn</a> and <a href="https://twitter.com/CommunityScale">Twitter/X</a>. This dashboard is <a href="https://github.com/CommunityScale/Greenfield">open source</a> MIT license.</p>
-			</div>
-		</div>
-	</div>
 
-	<script type="text/javascript" src="nav-javascript.js"></script>
-	<script src="datagrabber.js"></script>
 	<!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>

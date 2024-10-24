@@ -449,6 +449,16 @@ p {
   margin-top: 0;
 }
 
+/* For numberformat.js ––––––––––––––––––––––––––– */
+
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
+}
+
 
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

@@ -1,109 +1,114 @@
 // Function to fetch and process CSV data
-function fetchCSVData() {
-  fetch('./c_income_zhvi_mortgage_comprehensive_affordability.csv') // Path to your CSV file
-    .then(response => response.text())
-    .then(data => {
-      // Split the CSV into rows
-      const rows = data.split('\n');
-      console.log('CSV Rows:', rows);  // Debugging: Log all the rows to verify CSV content
+async function fetchCSVData() {
+  try {
+    const response = await fetch('./c_income_zhvi_mortgage_comprehensive_affordability.csv');
+    const csvData = await response.text();
+    const parsedData = parseCSVData(csvData);
+    updateHTML(parsedData);
+  } catch (error) {
+    console.error('Error fetching CSV data:', error);
+  }
+}
 
-      // Remove any empty or whitespace-only rows
-      const nonEmptyRows = rows.filter(row => row.trim() !== '');
-      console.log('Non-empty Rows:', nonEmptyRows);  // Debugging: Log non-empty rows
+// Function to parse CSV data into an array of objects
+function parseCSVData(csv) {
+  const lines = csv.split('\n').filter(line => line.trim() !== '');
+  const headers = lines[0].split(',');
+  const rows = lines.slice(1);
 
-      if (nonEmptyRows.length < 13) {
-        console.error('Error: Not enough rows in the CSV to calculate 12 rows prior.');
-        return;  // Exit the function early if there are not enough rows
+  return rows.map(row => {
+    const values = row.split(',');
+    const obj = {};
+    headers.forEach((header, index) => {
+      if (header.trim() === 'Date') {
+        obj[header.trim()] = values[index]?.trim(); // No shift for date column
+      } else {
+        obj[header.trim()] = values[index + 1]?.trim(); // Shift index by +1 for price columns
       }
-
-      // Get the index of the last row
-      const lastRowIndex = nonEmptyRows.length - 1;
-
-      // Get the last row, previous row, and 12 rows prior (if available)
-      const lastRow = nonEmptyRows[lastRowIndex].split(',');
-      const previousRow = nonEmptyRows[lastRowIndex - 1]?.split(',');
-      const row12Prior = nonEmptyRows[lastRowIndex - 12]?.split(',');
-
-      console.log('Last Row:', lastRow);  // Debugging: Log the last row
-      console.log('Previous Row:', previousRow);  // Debugging: Log the previous row
-      console.log('12 Rows Prior:', row12Prior);  // Debugging: Log the 12th prior row
-
-      // Check if rows contain enough columns
-      if (lastRow.length < 15 || previousRow?.length < 15 || row12Prior?.length < 15) {
-        console.error('Error: Rows do not have enough columns.');
-        return;  // Exit the function early if columns are missing
-      }
-
-      // Extract and convert necessary column values
-      const lastRowCol12 = parseToNumber(lastRow[12]);
-      const lastRowCol15 = parseToNumber(lastRow[15]);
-
-      if (isNaN(lastRowCol12) || isNaN(lastRowCol15)) {
-        console.error('Error: Unable to convert column values to numbers.');
-        return;  // Exit the function early if conversion to number fails
-      }
-
-      // Calculate differences with previous rows
-      const prevRowCol15 = parseToNumber(previousRow[15]);
-      const diffWithPrevRow = isNaN(prevRowCol15) ? 'N/A' : lastRowCol15 - prevRowCol15;
-
-      const row12PriorCol15 = parseToNumber(row12Prior[15]);
-      const diffWith12RowsPrior = isNaN(row12PriorCol15) ? 'N/A' : lastRowCol15 - row12PriorCol15;
-
-      // Format values for display
-      const formattedLastRowCol12 = formatNumber(lastRowCol12);
-      const formattedLastRowCol15 = formatCurrency(lastRowCol15);
-      const formattedDiffWithPrevRow = typeof diffWithPrevRow === 'number' ? formatCurrency(diffWithPrevRow) : 'N/A';
-      const formattedDiffWith12RowsPrior = typeof diffWith12RowsPrior === 'number' ? formatCurrency(diffWith12RowsPrior) : 'N/A';
-      
-      // Extract the month name from the previous row (column 0 assumed to be date)
-      let previousMonthName = 'N/A';
-      if (previousRow && previousRow[0]) {
-        const date = new Date(previousRow[0].trim());
-        if (!isNaN(date)) {
-          previousMonthName = date.toLocaleString('en-US', { month: 'long' });
-        }
-      }
-      
-      // Insert the extracted values into the corresponding HTML elements
-      document.getElementById('mortgage-rate').innerText = formattedLastRowCol12;
-      document.getElementById('current-gap').innerText = formattedLastRowCol15;
-      document.getElementById('change-month').innerText = formattedDiffWithPrevRow;
-      document.getElementById('change-year').innerText = formattedDiffWith12RowsPrior;
-      document.getElementById('last-month').innerText = previousMonthName;
-    })
-    .catch(error => console.error('Error fetching CSV:', error));
+    });
+    return obj;
+  });
 }
 
-// Utility function to parse a CSV row into an array
-function parseCSVRow(row) {
-  return row ? row.split(',') : [];
-}
+// Function to update HTML elements with the desired values
+function updateHTML(data) {
+  if (data.length === 0) {
+    console.error('No data available to update HTML elements.');
+    return;
+  }
 
-// Utility function to check if a row has enough columns
-function hasEnoughColumns(row, minColumns) {
-  return row && row.length >= minColumns;
-}
+  const latestIndex = data.length - 1;
+  const previousMonthIndex = data.length - 2;
+  const oneYearAgoIndex = Math.max(0, latestIndex - 12);
 
-// Utility function to parse a value to a number
-function parseToNumber(value) {
-  return parseFloat(value?.trim());
-}
+  // Get latest values for the desired fields from "ZHVI_Affordable_Difference" column
+  const latestZHVIDifference = parseFloat(data[latestIndex]['ZHVI_Affordable_Difference']);
+  const previousMonthZHVIDifference = previousMonthIndex >= 0 ? parseFloat(data[previousMonthIndex]['ZHVI_Affordable_Difference']) : NaN;
+  const oneYearAgoZHVIDifference = oneYearAgoIndex >= 0 ? parseFloat(data[oneYearAgoIndex]['ZHVI_Affordable_Difference']) : NaN;
+  const latestMortgageRate = parseFloat(data[latestIndex]['Mortgage_Rate']);
 
-// Utility function to format a number with commas and no decimals
-function formatNumber(value) {
-  return value.toLocaleString('en-US', { maximumFractionDigits: 0 });
-}
+  // Update "current-gap"
+  const currentGapElement = document.getElementById('current-gap');
+  if (!isNaN(latestZHVIDifference)) {
+    const currentGap = `$${Math.round(latestZHVIDifference).toLocaleString()}`;
+    currentGapElement.innerText = currentGap;
+  } else {
+    currentGapElement.innerText = 'Data unavailable';
+  }
 
-// Utility function to format a value as currency
-function formatCurrency(value) {
-  return new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0
-  }).format(value);
+  // Update "change-month"
+  const changeMonthElement = document.getElementById('change-month');
+  let changeMonthHTML = 'Data unavailable';
+  if (!isNaN(latestZHVIDifference) && !isNaN(previousMonthZHVIDifference)) {
+    const changeMonthValue = latestZHVIDifference - previousMonthZHVIDifference;
+    changeMonthHTML = `${changeMonthValue >= 0 ? '▲' : '▼'} $${Math.abs(Math.round(changeMonthValue)).toLocaleString()}`;
+    changeMonthElement.innerText = changeMonthHTML;
+    changeMonthElement.style.color = changeMonthValue >= 0 ? 'red' : 'green';
+  } else {
+    changeMonthElement.innerText = changeMonthHTML;
+    changeMonthElement.style.color = 'black';
+  }
+
+  // Update "change-year"
+  const changeYearElement = document.getElementById('change-year');
+  let changeYearHTML = 'Data unavailable';
+  if (!isNaN(latestZHVIDifference) && !isNaN(oneYearAgoZHVIDifference)) {
+    const changeYearValue = latestZHVIDifference - oneYearAgoZHVIDifference;
+    changeYearHTML = `${changeYearValue >= 0 ? '▲' : '▼'} $${Math.abs(Math.round(changeYearValue)).toLocaleString()}`;
+    changeYearElement.innerText = changeYearHTML;
+    changeYearElement.style.color = changeYearValue >= 0 ? 'red' : 'green';
+  } else {
+    changeYearElement.innerText = changeYearHTML;
+    changeYearElement.style.color = 'black';
+  }
+
+  // Extract the month name from the row below the previous row (column assumed to be date)
+  let previousMonthName = 'N/A';
+  const shiftedPreviousMonthIndex = previousMonthIndex + 1;
+  if (shiftedPreviousMonthIndex < data.length && data[shiftedPreviousMonthIndex]['Date']) {
+    const date = new Date(data[shiftedPreviousMonthIndex]['Date']);
+    if (!isNaN(date)) {
+      previousMonthName = date.toLocaleString('en-US', { month: 'long' });
+    }
+  }
+  document.getElementById('last-month').innerText = previousMonthName;
+
+  // Update "mortgage-rate"
+  const mortgageRateElement = document.getElementById('mortgage-rate');
+  let mortgageRate = 'Data unavailable';
+  if (!isNaN(latestMortgageRate)) {
+    mortgageRate = `${latestMortgageRate.toFixed(1)}%`;
+    mortgageRateElement.innerText = mortgageRate;
+  } else {
+    mortgageRateElement.innerText = mortgageRate;
+  }
+
+  // Log current values for reference
+  console.log(`Current Affordability Gap: ${currentGapElement.innerText}`);
+  console.log(`Change from Previous Month: ${changeMonthHTML}`);
+  console.log(`Change from One Year Ago: ${changeYearHTML}`);
+  console.log(`Current Mortgage Rate: ${mortgageRate}`);
 }
 
 // Call the function when the page loads
-window.onload = fetchCSVData;
+document.addEventListener('DOMContentLoaded', fetchCSVData);
