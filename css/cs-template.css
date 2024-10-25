@@ -664,7 +664,7 @@ p.large-emoji {
 /* Details ––––––––––––––––––––––––––– */
 
 details {
-  margin-bottom: 0rem;
+  margin-bottom: 1rem;
   padding: 0.5rem;
   border-radius: 4px;
   transition: background-color 0.2s ease;
