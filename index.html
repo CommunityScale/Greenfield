@@ -73,7 +73,10 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WJ5WD2NX"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
-	 
+    
+<!-- script to run live-updating chart -->	
+	<script src="datagrabber.js"></script>	 
+	
 	<!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
@@ -305,6 +308,35 @@
 		</div>
 	</div>
 		
+	<div class="container" id="ZHVI">
+		<div class="row insight">
+			<div class="six columns" style="margin-top: 2%">
+				<h4>How affordable is Greenfield?</h4>
+				<h6>As of <span id="current-date">loading...</span>, there is a <b><span id="current-gap">loading...</span></b> gap between what a median income household can afford to buy and the median home price.</h6>
+				<p><span class="number" id="change-month">loading...</span> change to the gap since <span id="last-month">loading...</span>.</p>
+				<p><span class="number" id="change-year">loading...</span> change to the gap in the last twelve months.</p>
+				<details><summary><span class="fa fa-info"></span> Sources</summary> 
+					<figcaption><span id="mortgage-rate"></span> interest rate <span id="current-date"></span> (FRED)<br>
+						0.35% Property insurance rate<br>
+						1.00% Mortgage insurance rate<br>
+						1.77% Greenfield property tax rate<br>
+						30 years loan term<br>
+						19% Down payment regional average<br>
+						30% Household income for ownership costs<br>
+						Zillow Home Value Index (ZHVI)
+					</figcaption>
+						
+				</details>
+			
+			</div>
+			<div class="six columns" style="margin-top: 2%">
+				<iframe title="" aria-label="Interactive line chart" id="datawrapper-chart-lKV5Q" src="https://datawrapper.dwcdn.net/lKV5Q/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="359" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r=0;r<e.length;r++)if(e[r].contentWindow===a.source){var i=a.data["datawrapper-height"][t]+"px";e[r].style.height=i}}}))}();
+				</script>
+			</div>
+		</div>
+	</div>
+
+
 	<!-- Row with image and text -->
 	<div class="container" id="Role">	
 		<div class="row insight">
