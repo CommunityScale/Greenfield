@@ -44,8 +44,8 @@ function updateHTML(data) {
   const yearlyChange = currentGap - yearAgoGap;
 
   // Set the months directly like in our working test
-  document.getElementById('current-date').textContent = 'September 2024';
-  document.getElementById('last-month').textContent = 'August';
+  document.getElementById('current-date').textContent = 'October 2024';
+  document.getElementById('last-month').textContent = 'September';
   
   // Update the values using our calculated numbers
   document.getElementById('current-gap').textContent = `$${Math.round(currentGap).toLocaleString()}`;
