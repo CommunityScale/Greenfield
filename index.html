@@ -75,8 +75,25 @@
 	<!-- End Google Tag Manager (noscript) -->
     
 <!-- script to run live-updating chart -->	
-	<script src="datagrabber.js"></script>	 
+	<script src="datagrabber.js"></script>	
 	
+<!-- script to run progress tracker connection to google doc 
+Here's the doc link: https://docs.google.com/spreadsheets/d/1gNe2u1_24HM6IKwVPJ3Fs6lySYxZNaWSQL-FGr3TUfg/edit?usp=sharing -->
+
+  <script>
+	fetch('https://script.google.com/macros/s/AKfycbwM67qw3nxkCGvzR6mC2PU7sRLC95rZZsO3eAR9m1SjzFpQTUAv9_dFzs2Kmni8CE3C/exec' + window.location.origin)
+	  .then(response => response.json())
+	  .then(data => {
+		document.getElementById('units-pipeline').textContent = data.item1;
+		document.getElementById('units-needed').textContent = data.item2;
+	  })
+	  .catch(error => {
+		console.error('Error fetching sheet data:', error);
+		document.getElementById('units-pipeline').textContent = 'Unavailable';
+		document.getElementById('units-needed').textContent = 'Unavailable2';
+	  });
+  </script>
+
 	<!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
@@ -144,18 +161,17 @@
 	<div class="overview">
 		<div class="container">
 			<!-- Row with image and text -->
+			<h4>Greenfield has completed a city-wide housing plan.</h4>
 			<div class="row">
-				<div class="six columns" style="margin-top: 2%">
-					<p><img src="./images/Greenfield aerial photo.jpg" height="auto" width="100%" title="CommunityScale" alt="CommunityScale"></p>
+				<div class="eight columns" style="margin-top: 2%">
+					<p>This housing needs assessment combines extensive quantitative data analysis with consideration of the community’s goals for its future to produce a 10-year housing production target. The Housing Plan builds on progress made over the past several years, including the Greenfield Housing Study (2014), Sustainable Master Plan Housing Element (2014), Downtown Revitalization Plan (2023), and Community Preservation Plan (2023). This website version of the study highlights key observations and findings. The People and Place sections of this report were presented at a public meeting on May 22, 2024. A video of this presentation is available <a href="https://www.youtube.com/watch?v=LUDM-pgbCJo" target="blank">here</a>. The Housing Plan document is also available in a much more detailed, downloadable pdf format:</p>
+					<p><a href="./Greenfield Housing Plan - 2024 - FINAL.pdf" target="blank"><button>📄 Read the Greenfield Housing Plan</button></a></p>
+					<p>In April 2025, the project team completed an analysis of Accessory Dwelling Unit (ADU) policy at the state and local level to document how Greenfield's City departments understand, regulate, and permit these unit types which represent one of several strategies to add housing toward Greenfield's 10-year production goal. The analysis incorporated revised guidance from the state following the Affordable Homes Act and recent updates to policy by local departments in response. This study can be downloaded here as a supplement to the Greenfield Housing Plan:</p>
+					<p><a href="./Greenfield ADU Policy and Implementation Analysis.pdf" target="blank"><button>📄 Read the ADU supplement</button></a></p>
 				</div>
-				<div class="six columns" style="margin-top: 2%">
-					<h4>Greenfield is developing a city-wide housing plan.</h4>
-					<p>This housing needs assessment combines extensive quantitative data analysis with consideration of the community’s goals for its future to produce a 10-year housing production target.</p>
-					<p>The Housing Plan builds on progress made over the past several years, including the Greenfield Housing Study (2014), Sustainable Master Plan Housing Element (2014), Downtown Revitalization Plan (2023), and Community Preservation Plan (2023).</p>
-					<p>This website version of the study highlights key observations and findings. The Housing Plan document is also available in a much more detailed, downloadable pdf format:</p>
-					<p><a href="./Greenfield Housing Plan - 2024 - FINAL.pdf" target="blank"><button><span class="fa fa-bullhorn"></span> Read the full report</button></a></p>
-					<p>The People and Place sections of this report were presented at a public meeting on May 22, 2024. A video of this presentation is available <a href="https://www.youtube.com/watch?v=LUDM-pgbCJo" target="blank">here</a>.</p>
-				</div>
+			<div class="four columns" style="margin-top: 2%">
+				<p><img src="./images/Greenfield aerial photov.jpg" height="auto" width="100%" title="CommunityScale" alt="CommunityScale"></p>
+			</div>
 			</div>
 		</div>
 	</div>
@@ -174,7 +190,7 @@
 				<div class="boxes">
 					<div class="box">
 						<p class="large-emoji">🚧</p>
-						<p class="large-number">200</p>
+						<p class="large-number"><span id="units-pipeline"></span></p>
 						<p>Units currently in the pipeline</p>
 					</div>
 					<div class="box">
@@ -1543,10 +1559,11 @@
 		<div class="row insight">
 			<div class="six columns" style="margin-top: 2%">
 				<h4>Read the full report</h4>
-				<p>Thank you for reviewing this online summary of the Greenfield Housing Plan. Use the link at right to access full details on the Plan's analysis, findings, and policy recommendations.</p>
+				<p>Thank you for reviewing this online summary of the Greenfield Housing Plan. Use the link at right to access full details on the Plan's analysis, findings, and policy recommendations. The 2025 ADU study is also available here.</p>
 			</div>
 			<div class="six columns" style="margin-top: 2%">
-				<p><a href="./Greenfield Housing Plan - 2024 - FINAL.pdf" target="blank"><button>📄 Read the full report</button></a></p>
+				<p><a href="./Greenfield Housing Plan - 2024 - FINAL.pdf" target="blank"><button>📄 Read the Greenfield Housing Plan</button></a></p>
+				<p><a href="./Greenfield ADU Policy and Implementation Analysis.pdf" target="blank"><button>📄 Read the ADU supplement</button></a></p>
 			</div>
 		</div>
 	</div>
