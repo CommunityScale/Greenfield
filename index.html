@@ -81,7 +81,7 @@
 Here's the doc link: https://docs.google.com/spreadsheets/d/1gNe2u1_24HM6IKwVPJ3Fs6lySYxZNaWSQL-FGr3TUfg/edit?usp=sharing -->
 
   <script>
-	fetch('https://script.google.com/macros/s/AKfycbwM67qw3nxkCGvzR6mC2PU7sRLC95rZZsO3eAR9m1SjzFpQTUAv9_dFzs2Kmni8CE3C/exec' + window.location.origin)
+	fetch('https://script.google.com/macros/s/AKfycbwM67qw3nxkCGvzR6mC2PU7sRLC95rZZsO3eAR9m1SjzFpQTUAv9_dFzs2Kmni8CE3C/exec')
 	  .then(response => response.json())
 	  .then(data => {
 		document.getElementById('units-pipeline').textContent = data.item1;
@@ -195,7 +195,7 @@ Here's the doc link: https://docs.google.com/spreadsheets/d/1gNe2u1_24HM6IKwVPJ3
 					</div>
 					<div class="box">
 						<p class="large-emoji">🧱</p>
-						<p class="large-number">675 - 1,000</p>
+						<p class="large-number"><span id="units-needed">675 - 1,000</span></p>
 						<p>Units to build by 2034 to meet City goals</p>
 					</div>
 				</div>
