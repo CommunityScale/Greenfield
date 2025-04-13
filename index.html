@@ -80,17 +80,48 @@
 <!-- script to run progress tracker connection to google doc 
 Here's the doc link: https://docs.google.com/spreadsheets/d/1gNe2u1_24HM6IKwVPJ3Fs6lySYxZNaWSQL-FGr3TUfg/edit?usp=sharing -->
 
-  <script>
-	fetch('https://script.google.com/macros/s/AKfycbwM67qw3nxkCGvzR6mC2PU7sRLC95rZZsO3eAR9m1SjzFpQTUAv9_dFzs2Kmni8CE3C/exec')
-	  .then(response => response.json())
-	  .then(data => {
-		document.getElementById('units-pipeline').textContent = data.item1;
-		document.getElementById('units-needed').textContent = data.item2;
+<script>
+	function parseCSV(text) {
+	  const rows = [];
+	  let insideQuote = false, value = '', row = [];
+  
+	  for (let i = 0; i < text.length; i++) {
+		const char = text[i];
+		const nextChar = text[i + 1];
+  
+		if (char === '"' && insideQuote && nextChar === '"') {
+		  value += '"'; i++; // escaped quote
+		} else if (char === '"') {
+		  insideQuote = !insideQuote;
+		} else if (char === ',' && !insideQuote) {
+		  row.push(value); value = '';
+		} else if ((char === '\n' || char === '\r') && !insideQuote) {
+		  if (value || row.length) row.push(value);
+		  if (row.length) rows.push(row);
+		  value = ''; row = [];
+		  if (char === '\r' && nextChar === '\n') i++; // skip \n after \r
+		} else {
+		  value += char;
+		}
+	  }
+	  if (value || row.length) row.push(value);
+	  if (row.length) rows.push(row);
+	  return rows;
+	}
+  
+	fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vT-sotxeNkLBT6MULE9cyz1bavZOmn8iuSDVNERHshm0XKgFSsVK-VgQKQpCJVM6HJqEp5XM571Zbip/pub?gid=0&single=true&output=csv')
+	  .then(response => response.text())
+	  .then(text => {
+		const rows = parseCSV(text);  // ✅ use the custom parser!
+  
+		const item1 = rows[1][0];  // B1 (first column, second row)
+		const item2 = rows[2][0];  // C1 (first column, third row)
+  
+		document.getElementById('units-pipeline').textContent = item1;
+		document.getElementById('units-needed').textContent = item2;
 	  })
 	  .catch(error => {
-		console.error('Error fetching sheet data:', error);
-		document.getElementById('units-pipeline').textContent = 'Unavailable';
-		document.getElementById('units-needed').textContent = 'Unavailable2';
+		console.error('CSV fetch error:', error);
 	  });
   </script>
 
