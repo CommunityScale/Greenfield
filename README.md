@@ -13,5 +13,5 @@ This is a secure and open source storage solution where the dashboard can live f
 We welcome contributions from the community! Instructions on how to contribute can be found [here](/CONTRIBUTING.md).
 
 ## Contact
-https://communityscale.io/  
-nels@communityscale.io  
+https://communityscale.com/  
+nels@communityscale.com  
