@@ -1,3 +1,7 @@
+<a href="https://communityscale.com">
+    <img src="https://raw.githubusercontent.com/CommunityScale/media-kit/main/png/communityscale-wordmark-black.png" alt="CommunityScale Wordmark Black" height="30">
+</a>
+
 # [Greenfield Housing Plan Dashboard](https://communityscale.github.io/Greenfield/)
   
 This is an housing dashboard that consists of a responsive CSS boilerplate and HTML, no compiling or installing. The interactive charts are hosted indefinitely on Datawrapper. 
@@ -13,5 +17,5 @@ This is a secure and open source storage solution where the dashboard can live f
 We welcome contributions from the community! Instructions on how to contribute can be found [here](/CONTRIBUTING.md).
 
 ## Contact
-https://communityscale.io/  
-nels@communityscale.io  
+https://communityscale.com/  
+nels@communityscale.com  
